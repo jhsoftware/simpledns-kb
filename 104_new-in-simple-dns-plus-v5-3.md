@@ -1,5 +1,4 @@
 ﻿---
-title: New in Simple DNS Plus (v. 5.3)
 category: 17
 frontpage: false
 comments: true
@@ -9,89 +8,65 @@ vsort: 53
 created-utc: 2019-01-01
 modified-utc: 2019-01-01
 ---
-<h3>ALIAS-records (Auto Resolved Alias)</h3>
+# New in Simple DNS Plus (v. 5.3)
 
-<div>
-<div>
-<div>ALIAS-records are virtual alias records&nbsp;resolved&nbsp;by Simple DNS Plus at at the time of each request - providing&nbsp;&quot;flattened&quot; (no CNAME-record chain)&nbsp;synthesized records with data from a&nbsp;hidden source name.</div>
+### ALIAS-records (Auto Resolved Alias)
 
-<div>&nbsp;</div>
+ALIAS-records are virtual alias records resolved by Simple DNS Plus at at the time of each request - providing "flattened" (no CNAME-record chain) synthesized records with data from a hidden source name.  
+  
+This can be used for different purposes - including solving the classic problem with CNAME-records at the domain apex (for the zone name / for "the naked domain").  
+  
+More details at [/kb/2/alias-records-auto-resolved-alias](/kb/2/alias-records-auto-resolved-alias)  
+  
+![](img/104/1.png)  
+  
+  
+  
 
-<div>This can be used for different purposes - including solving&nbsp;the classic problem with&nbsp;CNAME-records at&nbsp;the domain apex (for&nbsp;the&nbsp;zone name&nbsp;/&nbsp;for &quot;the naked domain&quot;).</div>
+### DNS0x20
 
-<div>&nbsp;</div>
+For even stronger protection against DNS spoofing, Simple DNS Plus can now randomize the letter casing of the query name of outgoing DNS requests, and only accept responses which correctly echo this.  
+Combined with random request IDs and random port numbers, this makes even harder to "guess" the correct parameters to fake a spoofing response.  
+Trivia: In DNS lingo this is called "DNS0X20" - adding/subtracting hex 20 (decimal 32) from a character ASCII code switches between upper/lower case.  
+  
+![](img/104/2.png)  
 
-<div>More details at&nbsp;<a href="/kb/2/alias-records-auto-resolved-alias">/kb/2/alias-records-auto-resolved-alias</a></div>
+### HTTP API can share port 80 / domain / partial URL with IIS
 
-<div>&nbsp;</div>
+The HTTP API now uses the Windows HTTP Server API making it possible to share URL space with IIS and other processes.  
+For example, you could configure it to be accessible as sub-folder of your IIS website.  
+This is configured through a "URL prefix" string. For details see [https://msdn.microsoft.com/en-us/library/windows/desktop/aa364698(v=vs.85).aspx](https://msdn.microsoft.com/en-us/library/windows/desktop/aa364698(v=vs.85).aspx){target=_blank}  
+  
+![](img/104/3.png)  
 
-<div><img height="412" src="img/104/1.png" width="421" /></div>
-</div>
-</div>
+### New authentication options for HTTP API
 
-<div>&nbsp;</div>
+For enhanced security, we have added two new authentication methods for the HTTP API - "Digest" and "Integrated (NTLM / Kerberos)".  
+We recommend using one of these new methods, when the HTTP API is accessible over the Internet.  
+  
+We have also added an option to authenticate using a Windows user account - utilizing Windows password management.  
+  
+![](img/104/4.png)  
+  
 
-<h3>DNS0x20</h3>
+### Added support for CERT-records (Certificate / CRL)
 
-<div>For even stronger protection against DNS spoofing, Simple DNS Plus can now randomize the letter casing of the query name of outgoing&nbsp;DNS requests, and only accept responses which correctly echo this.</div>
+CERT-records store certificates and related revocation lists (CRL) for cryptographic keys.  
+  
+![](img/104/5.png)  
 
-<div>Combined with random request IDs and&nbsp;random port numbers, this makes even harder to &quot;guess&quot; the correct parameters to fake a spoofing response.</div>
+### Added support for TLSA-records (Transport Layer Security Authentication)
 
-<div>Trivia: In DNS lingo&nbsp;this is called &quot;DNS0X20&quot; - adding/subtracting hex 20 (decimal 32) from a character ASCII code switches between upper/lower case.</div>
+TLSA records are used to specify the keys used in a domain's TLS servers.  
+  
+![](img/104/6.png)  
 
-<div>&nbsp;</div>
+### Miscellaneous
 
-<div><img height="426" src="img/104/2.png" width="647" /></div>
+- Performance optimizations.
+- SRV-record dialog updated with separate input fields for service and protocol (part of record name).
+- Option to automatically check for Simple DNS Plus updates (build 101).
+- Retired support for Windows 2000 (now requires Windows XP / Server 2003 or later)
+- Retired SPF record type (type 99) including related functions (now obsolete as per RFC7208 sect. 3.1)
+- Retired A6 record type (now obsolete as per RFC6563)
 
-<h3>HTTP API can share&nbsp;port 80 / domain&nbsp;/ partial URL&nbsp;with IIS</h3>
-
-<div>The HTTP API now uses the Windows HTTP Server API making it possible to share URL space with IIS and other processes.<br />
-For example, you could configure it to be&nbsp;accessible&nbsp;as sub-folder of your IIS website.<br />
-This is configured through a &quot;URL prefix&quot; string. For details see&nbsp;<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/aa364698(v=vs.85).aspx" target="_blank">https://msdn.microsoft.com/en-us/library/windows/desktop/aa364698(v=vs.85).aspx</a></div>
-
-<div>&nbsp;</div>
-
-<div><img height="426" src="img/104/3.png" width="647" /></div>
-
-<h3>New authentication options for&nbsp;HTTP API</h3>
-
-<div>
-<div>For enhanced security, we have added two new authentication methods for the HTTP API -&nbsp;&quot;Digest&quot;&nbsp;and &quot;Integrated (NTLM / Kerberos)&quot;.<br />
-We recommend using one of&nbsp;these new methods, when the HTTP API is accessible over the Internet.</div>
-
-<div>&nbsp;</div>
-
-<div>We have also added an option to authenticate using&nbsp;a Windows user account - utilizing Windows&nbsp;password management.<br />
-&nbsp;</div>
-</div>
-
-<div><img height="426" src="img/104/4.png" width="647" /></div>
-
-<div>&nbsp;</div>
-
-<h3>Added support for CERT-records (Certificate / CRL)</h3>
-
-<div>CERT-records store certificates and related revocation lists (CRL) for cryptographic keys.</div>
-
-<div>&nbsp;</div>
-
-<div><img height="497" src="img/104/5.png" width="421" /></div>
-
-<h3>Added support for TLSA-records&nbsp;(Transport Layer Security Authentication)</h3>
-
-<div>TLSA records are used to specify the keys used in a domain's TLS servers.</div>
-
-<div>&nbsp;</div>
-
-<div><img height="503" src="img/104/6.png" width="421" /></div>
-
-<h3>Miscellaneous</h3>
-
-<ul>
-	<li>Performance optimizations.</li>
-	<li>SRV-record&nbsp;dialog&nbsp;updated with separate input fields for service and protocol (part of record name).</li>
-	<li>Option to automatically check for Simple DNS Plus updates (build 101).</li>
-	<li>Retired support for Windows 2000 (now requires Windows XP / Server 2003 or later)</li>
-	<li>Retired SPF record type&nbsp;(type 99) including related functions (now obsolete as per&nbsp;RFC7208 sect. 3.1)</li>
-	<li>Retired A6 record type&nbsp;(now obsolete as per&nbsp;RFC6563)</li>
-</ul>
