@@ -12,8 +12,8 @@ This plug-in provides TFTP (Trivial File Transfer Protocol) server functionality
 
 It supports the "blksize", "timeout" and "tsize" options (implements RFC1350, 2347,2348, and 2349).
 
-TFTP is typically used in combination with [DHCP](https://simpledns.plus/kb/169) to enable PXE / diskless booting of PCs, provisioning IP phones, etc.  
-An example of this is provided in [KB73 - How to serve a network based Debian Linux installation with Simple DNS Plus](https://simpledns.plus/kb/73).
+TFTP is typically used in combination with [DHCP](/kb/169) to enable PXE / diskless booting of PCs, provisioning IP phones, etc.  
+An example of this is provided in [How to serve a network based Debian Linux installation with Simple DNS Plus](/kb/73).
 
 On the "Plug-In Settings" tab, enter the following settings (explained below the image):
 

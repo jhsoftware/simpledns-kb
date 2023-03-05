@@ -38,7 +38,7 @@ But it very effectively prevents spamming/phishing from all other domain names o
 
 A good alternative to this is "v=spf1 mx -all" (meaning "these domains only send e-mail from the mail server listed in their MX-record").
 
-This way any domain name that has an [MX-record](/help/mx-records) is covered automatically.
+This way any domain name that has an [MX-record](https://simpledns.plus/help/mx-records) is covered automatically.
 
 And sub-names such as www.example.com which typically do not have MX-records are still excluded.
 

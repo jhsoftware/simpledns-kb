@@ -20,7 +20,7 @@ A commonly used optional field is "rua" which specifies the e-mail address that 
 
 For additional fields, see section 6.3 of [RFC7489](https://www.rfc-editor.org/rfc/rfc7489.txt)
 
-You can use our on-line [DMARC record wizard](/dmarc-wizard) to generate your DMARC record data.
+You can use our on-line [DMARC record wizard](https://simpledns.plus/dmarc-wizard) to generate your DMARC record data.
 
 In Simple DNS Plus, a DMARC record might look like this:
 

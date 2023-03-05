@@ -12,7 +12,7 @@ modified-utc: 2019-01-01
 
 This version update is primarily about new DNSSEC features. For an overview of DNSSEC concepts such as "KSK", "ZSK" and "key rollovers", please see <https://simpledns.plus/help/definition-dnssec>.
 
-We have also updated the KB article [How to DNSSEC sign a zone](https://simpledns.plus/kb/65) with step-by-step instructions on using these new DNSSEC features.
+We have also updated the KB article [How to DNSSEC sign a zone](/kb/65) with step-by-step instructions on using these new DNSSEC features.
 
 New features in v. 8.0:
 

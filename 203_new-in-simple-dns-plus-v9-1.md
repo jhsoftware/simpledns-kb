@@ -62,7 +62,7 @@ It is now possible to have some plug-ins queried before local zones and other pl
 ### Miscellaneous updates{#misc}
 
 - New plug-in DNS Request rule "Server is authoritative (AA)". Can be used to only "ask" the plug-in when the server is (or is not) authoritative (has a zone) for the requested name. (only works for plug-ins listed after [LOCAL DNS ZONES] - see "Plug-in query order enhanced" above). 
-- The "Automatic SPF records" feature (Options dialog / DNS / Local Zones / Automatic SPF) has been removed. A new [Auto SPF plug-in](/plugin-autospf) is now available to provide this functionality.
+- The "Automatic SPF records" feature (Options dialog / DNS / Local Zones / Automatic SPF) has been removed. A new [Auto SPF plug-in](https://simpledns.plus/plugin-autospf) is now available to provide this functionality.
 - "Maximum inbound DNS TCP connections" option (Options dialog / DNS / Inbound requests section) changed to "...per source IP address". To avoid blocking legitimate connections from other IP addresses.
 
 

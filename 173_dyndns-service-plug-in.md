@@ -84,7 +84,7 @@ Secure update method over HTTP.
 For a list of client programs that support this method [click here](http://gnudip2.sourceforge.net/gnudip-www/latest/gnudip/html/clients.html){target=_blank}.  
 For more details on HTTP update methods, see "Base URL for HTTP services" below.
 - **HTTP - Dyn.com URL format (Basic HTTP auth.)**  
-See [https://simpledns.plus/kb/66](https://simpledns.plus/kb/66){target=_blank} for details.
+See [How to intercept dyndns.org (Dyn.com) updates from Internet/NAT routers](/kb/66) for details.
 - **Enable remote IP detection service**  
 Provides a simple service that returns the IP address of the sender of the HTTP request.  
 This can be used directly in a browser and by some DynDNS client programs.
@@ -116,8 +116,8 @@ However, if the HTTP request header contains an "X-Forwarded-For" or "Client-IP"
 This is a very common combination (DynDNS and HTTP redirection / cloaking).
 - One of the more popular DynDNS client programs for Windows is "DynSite" by Noël Danjou.  
 To make it easy to configure DynSite to work with your DynDNS service based on this plug-in, we have created an on-line function to generate plug-in configuration files for DynSite - [available here](https://simpledns.plus/dynsite-plugin).
-- If you want to integrate this plug-in with your systems, for example allowing user sign-up at your web-site, you can use the [HTTP API](https://simpledns.plus/kb/115) "getpluginconfig" and "updatepluginconfig" commands.  
+- If you want to integrate this plug-in with your systems, for example allowing user sign-up at your web-site, you can use the [HTTP API](/kb/115) "getpluginconfig" and "updatepluginconfig" commands.  
 You can also retrieve the current status of DynDNS users through the "pluginstate" command.
 
-For details on binding https:// to an SSL certificate - see [https://simpledns.plus/kb/163](https://simpledns.plus/kb/163) (article talks about HTTP API, but it works the same for the DynDNS plug-in).
+For details on binding https:// to an SSL certificate - see [How to bind an SSL certificate to the HTTP API](/kb/163) (article talks about HTTP API, but it works the same for the DynDNS plug-in).
 

@@ -57,7 +57,7 @@ Specify the DNS servers to assign to DHCP clients:
 ![](img/169/4.png)
 - **TFTP / Boot file tab**  
 These options are typically used in combination with a [TFTP server](https://simpledns.plus/plugin-tftp) to enable PXE / disk less booting of PCs, provisioning IP phones, etc.  
-An example of this is provided in [KB1304 - How to serve a network based Debian Linux installation with Simple DNS Plus](http://simpledns.plus/kb/73).
+An example of this is provided in [How to serve a network based Debian Linux installation with Simple DNS Plus](/kb/73).
 
 ![](img/169/5.png)
 

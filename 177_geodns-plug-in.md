@@ -58,5 +58,5 @@ The GeoDNS plug-in can also be used as a source when setting up DNS request rule
 
 ![](img/177/7.png)
 
-For an example of using this for blocking DNS requests from specific countries, see [KB6](https://simpledns.plus/kb/6).
+For an example of using this for blocking DNS requests from specific countries, see [Blocking DNS requests from specific countries](/kb/6).
 
