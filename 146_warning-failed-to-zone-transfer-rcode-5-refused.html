@@ -14,9 +14,8 @@ For example:<br />
 <p>First make sure that the zone name is spelled correctly and matches the name used on the primary server, and make sure that the IP address is the correct address of your primary DNS server.</p>
 <p>Next make sure that the primary server allows the IP address of the secondary server to request zone transfers for the zone.</p>
 <p>
-<span style="color: red;">
 <strong>IMPORTANT:</strong>
-</span>If the computer running your secondary DNS server has multiple IP addresses, then zone transfer requests may not originate from the same IP address as the secondary DNS server is configured to listen for inbound DNS requests on.<br />
+If the computer running your secondary DNS server has multiple IP addresses, then zone transfer requests may not originate from the same IP address as the secondary DNS server is configured to listen for inbound DNS requests on.<br />
 You can configure which local IP address is used for outbound requests (including zone transfer requests) in the Options dialog / DNS / Outbound Requests section.<br />
 You can check which IP address zone transfer requests originate from simply be looking in the Simple DNS Plus log on the primary server.</p>
 <p>On a Simple DNS Plus primary server, there are 3 different settings which can affect zone transfer requests beeing allowed or not:</p>

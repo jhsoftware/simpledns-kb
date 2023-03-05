@@ -19,12 +19,12 @@ For example when an ISP's customer has canceled his web-hosting services, but hi
 <p>IIS and other web-server applications of course include similar redirection functions, and you can do more advanced redirection through server side scripting (see <a href="https://simpledns.plus/kb/148">KB1151</a>). This plug-in sits somewhere in between. It offers more options (cloaking and URL substitutions) than the built-in IIS functions, yet it requires no programming / scripting.<br />
 It also allows you to do HTTP redirection in scenarios where a full web-server is not otherwise needed. And finally, it may simply be more convenient to manage this along with the rest of your DNS data.</p>
 
-<p><span style="color: red;">IMPORTANT:</span> This plug-in requires the use of port 80 TCP (443 for HTTPS) on a static public IP address.<br />
+<p><b>IMPORTANT:</b> This plug-in requires the use of port 80 TCP (443 for HTTPS) on a static public IP address.<br />
 It can however share port 80/443 with IIS (v. 6 and later) running on the same computer, as long as all IIS web-sites are configured with specific host names, or use a different IP address or port number.<br />
 For those interested in the technical details - this is possible because instead of binding to port 80 directly, the plug-in uses the Windows <a href="http://msdn.microsoft.com/en-us/library/aa364510(vs.85).aspx" target="_blank">HTTP Server API</a> allowing it to share port 80 with any other applications using the API - including IIS.<br />
 If the computer running Simple DNS Plus is behind a NAT router or proxy server, you need to &quot;map&quot; port 80/443 TCP from the public Internet IP address to this computer's private IP address.</p>
 
-<p><span style="color: red;">IMPORTANT:</span> This plug-in requires Windows XP SP2 / Windows Server 2003 or later.</p>
+<p><b>IMPORTANT:</b> This plug-in requires Windows XP SP2 / Windows Server 2003 or later.</p>
 
 <p>In the plug-in instance dialog / Plug-In Settings tab you can specify the protocols, IP address and ports to listen for HTTP requests on, the default redirect URL, and the host names to redirect:</p>
 

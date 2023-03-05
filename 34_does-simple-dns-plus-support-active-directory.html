@@ -6,13 +6,11 @@ comments: true
 created-utc: 2019-01-01
 modified-utc: 2019-01-01
 ---
-<table style="border: 1px solid black; background-color: #ffffc0;">
-    <tbody>
-        <tr>
-            <td>NOTE: Windows Server 2008 R2 has a bug which causes a "Bad DNS Packet" error when trying to setup Active Directory with Simple DNS Plus - for details and fix <a href="https://simpledns.plus/news/10">click here</a>.</td>
-        </tr>
-    </tbody>
-</table>
+
+<div style="border: 1px solid black; background-color: #ffffc0;">
+NOTE: Windows Server 2008 R2 has a bug which causes a "Bad DNS Packet" error when trying to setup Active Directory with Simple DNS Plus - for details and fix <a href="https://simpledns.plus/news/10">click here</a>.
+</div>
+
 <p>Yes, Simple DNS Plus supports both the "SRV" record type (required for AD) and "dynamic updates" (makes configuration with AD much easier).</p>
 <p>The Windows Server will attempt to create the necessary DNS records through DNS dynamic updates - so by enabling this for the zone in which your network belongs, everything should be automatic.</p>
 <p>To enable dynamic updates, in the Simple DNS Plus main window, click the "Records" button:</p>
