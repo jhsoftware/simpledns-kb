@@ -1,0 +1,560 @@
+﻿---
+title: New in Simple DNS Plus v. 3.xx
+category: 17
+frontpage: false
+comments: true
+refs: 91,92,94,95,103,90
+created-utc: 2019-01-01
+modified-utc: 2019-01-01
+---
+<table>
+    <tbody>
+        <tr>
+            <td colspan="2" align="middle" valign="top">
+            <h3 id="ver360">Version 3.60</h3>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>TSIG authenticated dynamic DNS updates</strong>
+            <br />
+            Dynamic DNS updates can now be authenticated using transaction signatures (TSIG).<br />
+            This is a method of cryptographically signing the update data with a key name / value pair (similar to a user name / password pair).<br />
+            The key name identifies the client to the DNS server, and the key value is a shared secret known only by this client and the DNS server.<br />
+            <br />
+            This is especially useful when accepting dynamic update from across the Internet, where the originating IP address may not be known beforehand (dynamic IP) and does not guarantee the identity of the sender (IP spoofing).<br />
+            <br />
+            Different dynamic IP updater applications can be used with this.<br />
+            For example <a href="/kb/127/using-dynsite-with-simple-dns-plus">DynSite</a> or <a href="/kb/125/using-directupdate-with-simple-dns-plus">DirectUpdate</a>.<br />
+            <br />
+            A new product <a href="https://simplefailover.com/" target="_blank">Simple Failover</a> from JH Software also utilizes TSIG authenticated dynamic DNS updates.<br />
+            <br />
+            (Click "Records" button, open "Tools" menu, select "TSIG Dynamic Updates")<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Domain specific DNS forwarding</strong>
+            <br />
+            You can now use forwarding to different DNS servers for different domain names.<br />
+            You can use this for example if you wish to be able to resolve both Internet domain names as well as a private domain name hosted on another DNS server.<br />
+            <br />
+            (See Options dialog / DNS Requests tab)<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Extended DNS forwarding</strong>
+            <br />
+            Standard DNS forwarding is only performed for recursive DNS requests (outgoing requests from local users).<br />
+            However Simple DNS Plus now has a unique "extended forwarding" option, which causes non-recursive requests (incoming requests from the Internet) for the specified domain to be forwarded.<br />
+            There are several scenarios in which this is beneficial - for example:<br />
+            - You are hosting part of your DNS data on a separate DNS server, but you only have one public IP address available for hosting DNS.<br />
+            - You are hosting some or all of your DNS data on a separate specialized DNS server (for example an RBL list server) which requires a lot of resources (for example serving data from a database), and you want to offload this by having Simple DNS Plus sit in front of it caching the data, thereby causing fewer requests to hit the specialized DNS server.<br />
+            - You are hosting some or all of your DNS data on a separate DNS server which you don't want to expose directly to the Internet (for example if you have to use some other DNS software with known vulnerabilities). Simple DNS Plus will only forward standard DNS requests, only for the specified domain name, and it automatically filters out most malformed data.<br />
+            <br />
+            In all 3 scenarios, you can setup Simple DNS Plus on a computer with both a private IP address and a public IP address (or with a public IP address NAT mapped to it), setup the other DNS server on a private IP address only, and configure Simple DNS Plus to use extended forwarding for domains hosted on the other DNS server.<br />
+            <br />
+            (See Options dialog / DNS Requests tab) <br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>"Stealth DNS" security option</strong>
+            <br />
+            A hacker may use a software utility known as a "port scanner" to search for potential targets. This software sends dummy requests to a range of IP addresses on different service ports simply to register which addresses/ports respond.<br />
+            Any addresses/ports that responded will then be probed further for possible vulnerabilities.<br />
+            Simple DNS Plus now has a special "stealth" option which makes it invisible to such port scanners, by not responding to a DNS request unless it is for data in local zones or originates from a client offered recursion.<br />
+            <br />
+            (See Options dialog / DNS Security tab)<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Miscellaneous</strong>
+            <br />
+            Many areas of the algorithms for processing DNS requests have been further optimized. For example duplicate DNS requests (client resending request while the server still working on original request) are now recognized and ignored.<br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="middle" valign="top">
+            <br />
+            <hr class="JHHR" />
+            <h3 id="ver350">Version 3.50</h3>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td valign="top">
+            <strong>Separation of DNS engine and GUI = Access via Terminal Services</strong>
+            <br />
+            Simple DNS Plus runs on a lot of Windows 2000 servers, and a lot of these servers are being administered remotely via Windows Terminal Services (a.k.a. "Remote Desktop"). The problem is that when you connect to a remote Windows 2000 Server using Terminal Services, you are accessing a new "user session" rather than the "console session". When run as a Windows Service (a.k.a. NT-service), Simple DNS Plus (and its tray icon) "lived" in the console session, and was therefore not directly accessible through the Terminal Services session. Workarounds for this were described on our website, but were not exactly convenient or intuitive.<br />
+            Separating the DNS engine (the service part) from the user interface solves this and others issues - including conflicts with both Office 2000 and ZoneAlarm which led to some annoyance for many users. </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>NXDOMAIN Redirect<br />
+            </strong>Typically when you open a non-existing domain name in a web-browser, you either get an error page, or you are redirected to some search web-site controlled by the web-browser company (or DNS registry).<br />
+            This of course happens all the time because of misspellings and bad links on web-sites.<br />
+            Now you can take advantage of those failed requests (from any client configured to use your DNS server) by redirecting them to your web-server instead of giving this traffic to the browser companies.<br />
+            This new option redirects all recursive DNS requests for non-existing domain names to a server IP address which you control.<br />
+            This gives you a unique opportunity to present your own custom search page, a domain sale offer, a marketing message, an intranet site, or anything else you can think of.<br />
+            Note: Only requests which are for domain names confirmed non-existing (NXDOMAIN) will be redirected - not any other error type conditions.<br />
+            The new option is available in the Options dialog / DNS Records tab.</td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td valign="top">
+            <strong>Error/Warning event notification<br />
+            </strong>On a busy Simple DNS Plus server, it can be easy to miss important events in the logs.<br />
+            There is now a new option (enabled by default) to write all errors and warnings to the Windows Event Log, which means that you can also use Windows tools such as &ldquo;eventtriggers.exe&rdquo; to trap events from Simple DNS Plus.</td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td valign="top">
+            <strong>New log file options<br />
+            </strong>Many users have asked for more options to control log files.<br />
+            One problem is that Simple DNS Plus can generate some real big log files in no time, which can quickly fill up even moderately sized hard drives.<br />
+            We&rsquo;ve added options to generate log files per hour, day, or month - and these can now be recycled every day, month, or year (overwriting the oldest file first).<br />
+            These new options are available from the Options dialog / Logging tab. </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td valign="top">
+            <strong>Support for LOC-records<br />
+            </strong>A LOC-record describes the global position and size of a host, network, subnet, or any other entity.<br />
+            This DNS record type is still considered experimental, but with GPS devices now being offered as standard equipment in many automobiles, it might be time to add latitude and longitude to your DNS setup so you can find your way home&hellip;<br />
+            Some interesting and practical information about LOC-records is available at <a href="http://www.ckdhr.com/dns-loc/" target="_blank">http://www.ckdhr.com/dns-loc/</a><br />
+            To add a LOC-record, click the "Records" button, right-click a zone and select "Other new record...", select "LOC"... </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td valign="top">
+            <strong>Support for NAPTR-records</strong>
+            <br />
+            NAPTR-records are used to store rules used by DDDS (Dynamic Delegation Discovery System) applications.<br />
+            One example is "ENUM" which allows an end user to type a telephone number into e.g. a web browser and access a listing of Internet resources (URI) for that number, such as addresses for IP telephony, e-mail or Web sites. <br />
+            For more on "ENUM", please see <a href="http://www.ripe.net/enum" target="_blank">http://www.ripe.net/enum</a> or <a href="http://enum.nic.at/" target="_blank">http://enum.nic.at/</a><br />
+            To add a NAPTR-record, click the "Records" button, right-click a zone and select "Other new record...", select "NAPTR"... </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td valign="top">
+            <strong>New security option - Maximum number of inbound TCP connections<br />
+            </strong>A hacker may try to open a lot of TCP connections to exhaust server resources.<br />
+            To prevent this Simple DNS Plus the maximum number of inbound TCP connections can be set (default to 100). After this number of connections has been reached, additional connection attempts are logged and rejected.<br />
+            These options are available in the Options dialog / Security tab.</td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td valign="top">
+            <strong>Interoperability<br />
+            </strong>It is now possible to use the automatic Master/Slave zone synchronization function (added in version 3.20) with other DNS server software.<br />
+            No other DNS server software has this functionality built-in, and it still much easier to use with Simple DNS Plus on both the master and slave server.<br />
+            But now it is possible to manually &ldquo;fake&rdquo; a &ldquo;_masterlist&rdquo; zone on any standard DNS server, and have a Simple DNS Plus slave server synchronize with that.<br />
+            Another new option can prevent Simple DNS Plus from requesting &ldquo;incremental zone transfers&rdquo; (IXFR) from other DNS servers.<br />
+            IXFR is more efficient than the &ldquo;full zone transfer&rdquo; (AXFR) alternative, but some DNS server software packages do not support IXFR.<br />
+            So if you are using another brand software which doesn&rsquo;t understand IXFR as your primary DNS server, you can now save some wasted communication (IXFR request / Don&rsquo;t understand response) between the two servers. </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td valign="top">
+            <strong>New DHCP option to automatically update DNS (or not)<br />
+            </strong>Since version 1.04 Simple DNS Plus has included a DHCP server which when enabled automatically created DNS records for all DHCP client computers.<br />
+            Several users have described scenarios where this automatic updating may not be desirable - for example when multiple computers on the same network should be allowed to have the same computer name.<br />
+            So now there is an option to turn this on and off in the Options dialog, DHCP tab.</td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td valign="top">
+            <strong>Miscellaneous<br />
+            </strong>Additionally this release also includes a number of minor adjustments and updates including:<br />
+            - HTTP command "zonelist" extended with a new "listtype" field accepting either "simple", "primary", "secondary", or "extended" for different list types.<br />
+            - New option to turn on/off tray bar icon (was permanently on).<br />
+            - New right-click option in Active Log View to clear the window.<br />
+            - New sdnsplus.ini file option "HostsReverse" to enable/disable automatic creation of reverse records from hosts file.<br />
+            - Updated WHOIS server list for lookup tool.<br />
+            - New root server file.<br />
+            - Many other details have been further optimized or improved... </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="middle" valign="top">
+            <br />
+            <hr class="JHHR" />
+            <h3 id="ver320">Version 3.20</h3>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Automate secondary DNS servers</strong>
+            <br />
+            New "Slave Servers" and "Master Servers" options completely automate adding and deleting zones on secondary servers.<br />
+            This works on local networks as well as across the Internet.<br />
+            Replaces the "Copy zone files from" option.<br />
+            (See Options dialog - Zone Transfers tab)<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>HTTP administration / programming interface</strong>
+            <br />
+            Create a web interface to your DNS server for yourself or yours customers.<br />
+            This is not intended as a direct web interface, but is ideal for communicating with Simple DNS Plus from other applications across the network (for example ASP scripts running on IIS).<br />
+            <a href="/kb/115/sending-simple-dns-plus-http-commands">Click here</a> for details. <br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Support for Windows 2000 dynamic updates</strong>
+            <br />
+            Windows 2000 clients can register themselves in the DNS database.<br />
+            (IP address permission list per zone).<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Incremental Zone Transfers</strong>
+            <br />
+            A history of individual record updates (DHCP, dynamic update, HTTP updates) is recorded, so secondary DNS servers don't need to zone transfer the entire zone each time there is a change.<br />
+            This saves both CPU cycles and bandwidth.<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Support for new "A6" and "DNAME" record types</strong>
+            <br />
+            "A6" is a new record type for IPv6 addresses which replaces or supplements the AAAA record type.<br />
+            "DNAME" records lets you rename entire sub-name-spaces (advanced CNAME record).<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Active Log Snapshot</strong>
+            <br />
+            Is the Active Log View scrolling by too fast ?<br />
+            Hit F9 for an instant snapshot.<br />
+            Also allows you to copy/paste text from the Active Log.<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Maximum cache size option</strong>
+            <br />
+            You can use this to limit the amount of memory Simple DNS Plus will use for caching.<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Option to only log errors and warnings</strong>
+            <br />
+            Makes it easier to spot any problems.<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Option to restrict zone transfers for all zones<br />
+            </strong>Zone Transfer restrictions can be specified per zone, and now for all zones.<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Many new advanced configuration options</strong>
+            <br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="middle" valign="top">
+            <br />
+            <hr class="JHHR" />
+            <h3 id="ver301">Version 3.01</h3>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Tray Icon right-click menu</strong>
+            <br />
+            Easy access to Look Up Tool, Edit Records, and Exit<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>New "Data directory" and "Log file directory" options</strong>
+            <br />
+            You can now specify exactly where data (boot and zone files) and logs should be kept on your system.<br />
+            Just like with other log files, system performance can be enhanced by writing log files to a different physical disk drive (other than where the operating system is installed).<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>New "Load primary zones on demand only" option</strong>
+            <br />
+            Enabling this option will delay loading of primary zones until the first related request is received.<br />
+            In setups with many zones (+500), this can greatly improve the server startup time.<br />
+            Inactive zones will never be loaded, which in some situations may improve memory consumption.<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>New "Lines in Active Log View" option</strong>
+            <br />
+            The maximum number of log lines displayed in the Active Log View.<br />
+            Temporarily increasing the number of lines (history) displayed can be a great help in troubleshooting various DNS problems.<br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="middle" valign="top">
+            <br />
+            <hr class="JHHR" />
+            <h3 id="ver300">Version 3.00</h3>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Import Wizard</strong>
+            <br />
+            This function makes it very simple to import zones from other DNS server implementations.<br />
+            This includes zone transfer, import zone file, and import set of zone files based on a boot file.<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>"New Zone" Wizard</strong>
+            <br />
+            A simple wizard now guides you through the process of creating a zone.<br />
+            This includes primary, secondary, reverse, copy a zone, and alias (file sharing).<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Zone File Sharing</strong>
+            <br />
+            Simple DNS Plus now uses a standard 'Boot' file, which also means that two or more zones can share the same file.<br />
+            This makes it very easy to manage a large number of zones with the same data.<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>New "Auto Scan" function in "Reverse Zone Wizard"</strong>
+            <br />
+            This function scans all "forward zones" to create the records in a reverse zone.<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Faster record editor</strong>
+            <br />
+            New right-click pop-up menus make adding and modifying records much faster.<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>DHCP Reservations</strong>
+            <br />
+            IP addresses can now be reserved for specific computers based on name or MAC/hardware address.<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>LookUp Tool enhancements</strong>
+            <br />
+            The lookup tool now provides even more detail, and it now remembers previous lookups and servers between uses.<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>New 'Maximum cache time' option</strong>
+            <br />
+            You can now control the maximum cache time, or even disable caching by setting this option to zero.<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Support for 12 additional record types</strong>
+            <br />
+            These are all less commonly used / experimental record types:<br />
+            HINFO, MB, MG, MINFO, MR AFSDB, ISDN, RP, RT, X25, NSAP, and ATMA<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Zone File compatibility</strong>
+            <br />
+            Many users have expressed an interest in using zone files directly from other DNS server implementation, and some even seem to enjoy editing these files manually.<br />
+            This release automatically formats the files for better readability, and supports standard zone files options and a few BIND specifics:<br />
+            - Escape characters: ()\@<br />
+            - Directives: $ORIGIN, $TTL<br />
+            - Shorthand for TTLs: 1w2d3h4m = 1 week, 2 days, 3 hours, 4 minutes.<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Faster cache reload</strong>
+            <br />
+            When closing the program, the cache is automatically written to disk (if the 'reload cache...' option is on).<br />
+            This disk file is now a direct binary dump (was ASCII formatted), making both the dump and reload much faster.<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Command line options</strong>
+            <br />
+            To make it easier to integrate Simple DNS Plus through batch files etc., the following command line options have been implemented:<br />
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tbody>
+                    <tr>
+                        <td>sdnsplus -r</td>
+                        <td>Reloads all zones.</td>
+                    </tr>
+                    <tr>
+                        <td>sdnsplus -r zone-name zone-file</td>
+                        <td>Loads/reloads a specific zone.</td>
+                    </tr>
+                    <tr>
+                        <td>sdnsplus -u zone-name</td>
+                        <td>Unload a specific zone.</td>
+                    </tr>
+                    <tr>
+                        <td>sdnsplus -c</td>
+                        <td>Clears the cache.</td>
+                    </tr>
+                </tbody>
+            </table>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Automatic Root file update</strong>
+            <br />
+            The "Get latest Internet root file" function has been removed from the Tools menu.<br />
+            This process is now completely automated.<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>FASTER</strong>
+            <br />
+            Further optimization has resulted in almost 100% performance gain compared to earlier releases, memory usage is also significantly lower when large numbers of records are cached.<br />
+            </td>
+        </tr>
+    </tbody>
+</table>

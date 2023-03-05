@@ -1,0 +1,74 @@
+﻿---
+title: New in Simple DNS Plus v. 5.0 - HTTP API
+category: 17
+frontpage: false
+comments: true
+refs: 95
+created-utc: 2019-01-01
+modified-utc: 2019-01-01
+---
+<p>In Simple DNS Plus v. 5.0 the HTTP API has been extended with new commands and parameters to enable more powerful and easier integration with your solutions through simple scripting or programming.</p>
+<table cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td>
+            <h3>
+            <span style="text-decoration: underline;">addrecord, updaterecord, removerecord</span>
+            </h3>
+            </td>
+            <td style="color: red;" valign="top">
+            </td>
+        </tr>
+    </tbody>
+</table>
+These 3 new commands make it possible to add/update/remove individual DNS records of any type without having to parse and re-assemble an entire zone file.<br />
+The zone's SOA-record serial number is automatically incremented, secondary DNS servers notified, etc.
+<p>For single record updates, using these new commands is more efficient than "updatezone" because it allows secondary DNS servers to retrieve the change through an incremental zone transfer instead of a full zone transfer.</p>
+<p>The 3 commands all take the same parameters:<br />
+zone = the name of the zone to update<br />
+name = the name of the DNS record to update in zone file format (@ = zone name, etc.)<br />
+type = the DNS record type (for example 'A' or 'MX')<br />
+data = the record data in zone file format (optional for removerecord)<br />
+ttl = the Time-To-Live value in seconds (optional) </p>
+<p>For example:<br />
+Add a new MX-record:<br />
+http://127.0.0.1:8053/addrecord?zone=examle.com&amp;name=@&amp;type=MX&amp;data=10+mail<br />
+Update a CNAME-record:<br />
+http://127.0.0.1:8053/updaterecord?zone=example.com&amp;name=www&amp;type=CNAME&amp;data=@&amp;ttl=300<br />
+Remove all TXT-records for zone name:<br />
+http://127.0.0.1:8053/removerecord?zone=example.com&amp;name=@&amp;type=TXT</p>
+<p>As with all other HTTP API commands, these parameters can either be sent as part of the URL as above (GET), or as form data in the body of a POST request.</p>
+<table cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td>
+            <h3><span style="text-decoration: underline;">updatehost + IPv6 address</span></h3>
+            </td>
+            <td style="color: red;" valign="top"></td>
+        </tr>
+    </tbody>
+</table>
+The "updatehost" command now also works with IPv6 addresses.<br />
+<br />
+For example, the following adds or updates an AAAA-record:<br />
+http://127.0.0.1:8053/updatehost?host=host.domain.com&amp;data=1234::4321<br />
+<br />
+<h3><span style="text-decoration: underline;">zonelist?listtype=xml</span></h3>
+It is now possible to retrieve a list of local zones in XML format.<br />
+The previous formats (simple, primary, secondary, extended) are also still available.<br />
+<br />
+<img height="226" src="img/99/1.png" width="539" /><br />
+<br />
+<h3><span style="text-decoration: underline;">status?format=xml</span></h3>
+The status page is now also available as XML (previously only plain text format).<br />
+This make it possble to retrieve status information in a structured format from Simple DNS Plus, for use on web-pages and other applications etc.<br />
+The XML includes DNS request counts for the last 60 seconds, which for example could be used to render a graph (see HTML version below).<br />
+<br />
+<img height="219" src="img/99/2.png" width="522" /><br />
+<br />
+<h3><span style="text-decoration: underline;">status?format=html</span></h3>
+And the status page is now also available as HTML including a simple HTML graph of DNS request counts for the last 60 seconds:<br />
+<br />
+<img height="356" src="img/99/3.png" width="692" /><br />
+<h3> </h3>
+<p>Please note that Simple DNS Plus v. 5.0 also supports the "higher level" <a href="https://simpledns.plus/addons">Simple DNS Plus API for .NET and COM</a> which makes it even easier to program against DNS data in Simple DNS Plus.</p>

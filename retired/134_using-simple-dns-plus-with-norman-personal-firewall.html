@@ -1,0 +1,30 @@
+﻿---
+title: Using Simple DNS Plus with Norman Personal Firewall
+category: 6
+frontpage: false
+comments: true
+refs: 52
+created-utc: 2019-01-01
+modified-utc: 2019-01-01
+---
+<p>Norman Personal Firewall is a product from Norman ASA - <a href="http://www.norman.com" target="_blank">http://www.norman.com</a></p>
+<p>The first time you run Simple DNS Plus on on a computer with Norman Personal Firewall, you will probably get an error message like this:</p>
+<p>
+<img height="172" src="img/134/1.png" width="486" />
+</p>
+<p>The version of Norman Personal Firewall we tested (7.0.0.1) did not support IPv6 and blocks all IPv6 ports.<br />
+So if your computer has IPv6 enabled (default in Windows Vista / Server 2008), you first need to stop Simple DNS Plus from listening on all local IPv6 addresses including ::1 (localhost).<br />
+In the Simple DNS Plus Options dialog / DNS / Inbound Requests section, select "On the IP addresses checked below" and un-check IPv6 addresses:</p>
+<p>
+<img height="361" src="img/134/2.png" width="545" />
+</p>
+<p>Next, Norman Personal Firewall may have created a temporary firewall rule blocking Simple DNS Plus during Windows startup, so open the Norman Security Suite user interface, select "Personal Firewall", click "Clear session rules", and confirm by clicking the OK button:</p>
+<p>
+<img height="440" src="img/134/3.png" width="572" />
+</p>
+<p>Now restart Simple DNS Plus, and you should get the following dialog.<br />
+Select "is a permanent rule" and click the "Allow" button:</p>
+<p>
+<img height="398" src="img/134/4.png" width="311" />
+</p>
+<p>Simple DNS Plus should now be able to communicate freely over the Internet.</p>

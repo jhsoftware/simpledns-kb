@@ -1,0 +1,212 @@
+﻿---
+title: New in Simple DNS Plus v. 2.xx
+category: 17
+frontpage: false
+comments: true
+refs: 91,93,94,95,103,90
+created-utc: 2019-01-01
+modified-utc: 2019-01-01
+---
+<table>
+    <tbody>
+        <tr>
+            <td colspan="2" align="middle" valign="top">
+            <h3 id="ver203">Version 2.03</h3>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Selective binding.</strong>
+            <br />
+            You can now specify the exact server IP addresses to serve DNS requests on.<br />
+            (Used to be limited to either one IP address or all IP addresses)<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Offer recursion to multiple IP ranges.</strong>
+            <br />
+            This option is now a list of IP addresses / subnets, making it possible to specify exactly who should be offered recursion even if you have multiple or "class-less" subnets.<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Block ranges of IP addresses.</strong>
+            <br />
+            You can now also block IP addresses (or prevent blocking) by subnet.<br />
+            With the recent focus on "denial of service" (DoS) attacks, this becomes an increasingly important feature.<br />
+            By specifying a maximum number of requests per second, any client exceeding this will automatically be added to the block list.<br />
+            ("IP address blocking" has moved to a separate function in the Tools menu).<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Support for AAAA-records (IPv6).</strong>
+            <br />
+            The AAAA record type is the future replacement for A-records, and IPv6 the replacement for the current IP address system (a.k.a. IPv4). Few applications and network devices currently support IPv6, but this is expected to change rapidly.<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>More integration options.</strong>
+            <br />
+            Another option has been added for integration with custom applications.<br />
+            Sample code is now also available. See help file for details.<br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="middle" valign="top">
+            <br />
+            <hr class="JHHR" />
+            <h3 id="ver202">Version 2.02</h3>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Run as Windows Service (NT System Service).</strong>
+            <br />
+            Run Simple DNS Plus on Windows NT / 2000 without being logged into the system.<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>New "Reverse Zone Wizard".</strong>
+            <br />
+            Forget "in-addr.arpa" and reversing IP address segments.<br />
+            With the new wizard you simply specify your IP address range and Simple DNS Plus automatically generates all the necessary records.<br />
+            It even supports "classless delegation" for those with less than 256 IP addresses.<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Easy Zone and Record management.</strong>
+            <br />
+            The "Quick Domain Wizard" and "Zone Properties" dialogs can now automatically be pre-filled with your preferred defaults making it even easier to manage your DNS configuration.<br />
+            Also, the "Record Properties" dialog for A-records now includes an "Update Reverse Zone" option, which automatically generates corresponding reverse records.<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Enhanced DNS Look Up Tool - now with "WHOIS".</strong>
+            <br />
+            With the new "WHOIS" feature, you can check the details (such as name, address and phone) on the owners of a domain name or IP address.<br />
+            The Look Up Tool comes configured with a list of worldwide WHOIS servers, so just like regular DNS look ups - just enter a domain name, and Simple DNS Plus locates the correct server and returns the answer.<br />
+            The enhanced Look Up Tool also returns more details on standard DNS queries than in earlier versions.<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Support for SRV-records.</strong>
+            <br />
+            SRV-records are used by Windows 2000 directory services, and other recent Internet applications.<br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="middle" valign="top">
+            <br />
+            <hr class="JHHR" />
+            <h3 id="ver201">Version 2.01</h3>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Support for wildcard records ( *.domain-name ).</strong>
+            <br />
+            If you are hosting many sub-domains on the same servers, this new feature can be a real time saver.<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Integrate with other applications.</strong>
+            <br />
+            New options have been added to easily integrate Simple DNS Plus with other applications. See the <a href="https://simpledns.plus/help/">help file</a> for details.<br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="middle" valign="top">
+            <br />
+            <hr class="JHHR" />
+            <h3 id="ver200">Version 2.00</h3>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>"Zone Transfers" and "Zone Update Notification" functions added.</strong>
+            <br />
+            Automatically update DNS records on secondary DNS servers.<br />
+            Everything is completely automated - when changes are made in the new Record Editor, Simple DNS Plus immediately notifies secondary servers and a Zone Transfer is initiated.<br />
+            Simple DNS Plus can also be configured as a secondary DNS server, and will then automatically check for updates on the primary server.<br />
+            As everything else in Simple DNS Plus, Zone Transfers are implemented according to the DNS standards (RFCs), and so it is 100% compatible with other standard DNS servers.<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Cache Snapshot Viewer added.</strong>
+            <br />
+            Browse the cache with this new intuitive explorer style tool.<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>New User Interface.</strong>
+            <br />
+            Simple DNS Plus is now even easier to navigate with Tool Bars, Status Bars, HTML Help and other new GUI features.<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>New Animated Tray Bar Icon.</strong>
+            <br />
+            See when Simple DNS Plus is processing requests, even when minimized.<br />
+            </td>
+        </tr>
+    </tbody>
+</table>

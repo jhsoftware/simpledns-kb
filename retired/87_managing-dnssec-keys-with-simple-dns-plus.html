@@ -1,0 +1,110 @@
+﻿---
+title: Managing DNSSEC keys with Simple DNS Plus
+category: 2
+frontpage: false
+comments: true
+refs: 15,65
+created-utc: 2019-01-01
+modified-utc: 2019-01-01
+---
+<p>
+<span style="text-decoration: underline;">About DNSSEC key types</span>:<br />
+<br />
+RFC4641 (DNSSEC Operational Practices) defines two key types; "Key Signing Key" (KSK) and "Zone Signing Key" (ZSK).<br />
+Typically a zone is signed with both a KSK and a ZSK.<br />
+KSKs only sign the public key records (DNSKEY) for a zone, and usually have a long validity period (like 13 months).<br />
+KSKs are used as "Secure Entry Points" (SEP), and are referenced in parents zones through a delegation signature (DS-record).<br />
+ZSKs sign all the record sets in a zone, and usually have a shorter validity period (like 1 month).<br />
+ZSKs are not Secure Entry Points, and are not referenced directly in parent zones.<br />
+This setup allows a zone operator to change his keys (ZSKs) more frequently without having to update the delegation signature in the parent zone.<br />
+Note that when the signatures for either of these keys are about to expire, new keys and signatures must be added, so that in overlapping periods a zone might be signed by 3 or 4 different keys at the same time.</p>
+<p>Simple DNS Plus also supports a 3rd key type - "Simple".<br />
+This is basically a combined KSK and ZSK - a key used as a Secure Entry Point and also to sign all record sets in a zone.<br />
+This is just a simpler model which may be easier to use in some scenarios - but of course doesn't provide the benefits of KSK/ZSK separation.<br />
+<br />
+<span style="text-decoration: underline;">About DNSSEC key files</span>:</p>
+<p>When signing a zone (see <a href="#kbref">reference articles</a> below), Simple DNS Plus uses a "DNSSEC key file" containing the private/public key sets and various other options needed when signing.<br />
+Keeping this information in a separate file makes it easy to re-use the same keys for several zones, and it allows you to store keys off-line (as per the DNSSEC RFC recommendations), for example on a USB flash drive or floppy disk.<br />
+The DNSSEC key file format used by Simple DNS Plus is proprietary and cannot be used directly with other DNSSEC programs/tools - there is no standard specification for this.<br />
+However the file format is XML based and very simple. You can examine it with notepad or an XML file editor.</p>
+<p>
+<span style="text-decoration: underline;">Managing DNSSEC keys and key files:</span>
+</p>
+<p>You can specify a default DNSSEC key file for a zone in the Zone Properties dialog / DNSSEC tab:</p>
+<p>
+<img src="img/87/1.png" width="426" height="178" />
+</p>
+<p>Creating or editing a DNSSEC key file (by clicking the "Create new" / "Edit" buttons either in the Zone Properties dialog / DNSSEC tab, or in the DNSSEC Sign Zone dialog), brings up the "DNSSEC Key File" dialog where you can edit individual key sets and specify other signing options: </p>
+<p> <img src="img/87/2.png" width="458" height="355" /></p>
+<p>DNSSEC key file dialog details:</p>
+<ul>
+    <li>
+    <strong>Key Sets<br />
+    </strong>List of key sets which will be used to sign the zone(s).
+    </li>
+    <li>
+    <strong>Encrypt private keys for key sets</strong>
+    <ul>
+        <li>
+        <strong>None / All / KSK only<br />
+        </strong>- None: private keys are not encrypted in the DNSSEC key file, and you will never be asked for a password when signing zones.<br />
+        - All: all private keys are encrypted in the DNSSEC key file, and you will always be asked for a password when signing zones.<br />
+        - KSK only: only private keys for KSK type key sets are encrypted in the DNSSEC key file. You will be asked for the password the first time you sign a zone, and then only whenever the key sets change (and the DNSKEY record set therefore needs the be resigned).
+        </li>
+        <li>
+        <strong>Password<br />
+        </strong>Sets or changes the password used the encrypt the private keys. </li>
+    </ul>
+    </li>
+    <li>
+    <strong>NSEC3<br />
+    </strong>When enabled, the signing process will use NSEC3 (RFC5155) instead of NSEC (RFC4034) for denial-of-existence data. NSEC3 is more secure and more flexible than NSEC, but not yet as widely supported.
+    <ul>
+        <li><strong>Salt length<br />
+        </strong>Length of random salt value used to prevent dictionary attacks against NSEC3 records.
+        </li>
+        <li><strong>Iterations<br />
+        </strong>The number of additional hash calculations performed when calculating NSEC3 record names (higher number = more secure, but more taxing on DNS server). </li>
+    </ul>
+    </li>
+</ul>
+<p>
+<br />
+When you add / edit a key set, the details are specified in the DNSSEC Key Set dialog:</p>
+<p>
+<img src="img/87/3.png" width="448" height="503" />
+</p>
+<p>DNSSEC Key Set dialog details:</p>
+<ul>
+    <li>
+    <strong>Key set ID<br />
+    </strong>A unique ID (within the key file) for this key set. <br />
+    This is for identification only and can be anything you want.<br />
+    This is also added in the comment field on related signature DNS records.
+    </li>
+    <li>
+    <strong>Key set type<br />
+    </strong>Select the key set type - see discussion at the top of the page. RSA is recommend in RFCs.
+    </li>
+    <li>
+    <strong>Algorithm<br />
+    </strong>Cryptography algorithms used to calculate signatures.
+    </li>
+    <li>
+    <strong>Key size (bits)<br />
+    </strong>Key strength
+    </li>
+    <li>
+    <strong>Public key<br />
+    </strong>The public key in DNS zone file format - only available when editing existing key set.
+    </li>
+    <li>
+    <strong>Signatures expire<br />
+    </strong>When signatures created with this key set will expire.<br />
+    The RFCs recommend 13 months for KSKs, and 1 month for ZSKs.
+    </li>
+    <li>
+    <strong>DNSKEY only<br />
+    </strong>Check this if you don't want any record sets signed by this key set (but still include the DNSKEY record).<br />
+    This is typically used in "key pre-publish" scenarios. </li>
+</ul>

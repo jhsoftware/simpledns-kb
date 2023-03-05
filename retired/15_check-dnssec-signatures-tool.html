@@ -1,0 +1,30 @@
+﻿---
+title: Check DNSSEC Signatures tool
+category: 2
+frontpage: false
+comments: true
+refs: 65,87
+created-utc: 2019-01-01
+modified-utc: 2019-01-01
+---
+<p>"Check DNSSEC Signatures" is a free tool which looks up and verifies the DNSSEC signature(s) for the specified record set using the public key found in the related DNSKEY-record(s).<br />
+It DOES NOT not verify the DNSKEY against any trust anchors or secure delegations / DS-records (we may add this in a future version).<br />
+It supports RSA and DSA signatures, and SHA-1 hashing only (recommend and most common).</p>
+<p>We created this tool in order to test our new DNSSEC signing functions in Simple DNS Plus v. 5.2 - mostly because we couldn't find any existing DNSSEC testing tools for Windows.<br />
+99% of the program code in this tool comes from Simple DNS Plus, so how do we know that either is working correctly? Simple - we tested the tool against a bunch of DNSSEC signed zones around the Internet, and since this was successful, the signing function in Simple DNS Plus must be working too.</p>
+<p>Download <a href="https://simpledns.plus/outbox/chksig.zip">chksig.zip</a> (269 KB) (v. 1.0 build 1)</p>
+<p>System requirements: Windows 98/2000 or later + .NET Framework 2.0 or later.</p>
+<p>This zip file contains both a Windows GUI version (ChkSigW.exe) and a command line version (ChkSigC.exe) of the same tool.<br />
+The command line version returns an exit code 1 if it encounters any problems, so this could be used as part of some automated script to periodically check your zones.</p>
+<p>Windows GUI version:</p>
+<p><img src="img/15/1.png" width="482" height="458" /> </p>
+<p>Command line version:</p>
+<p><img src="img/15/2.png" width="542" height="301" /> </p>
+<p>...also works in PowerShell:</p>
+<img src="img/15/3.png" width="586" height="276" />
+<h3>Release Notes</h3>
+<p><strong><span style="text-decoration: underline;">Version 1.0 build 1 - July 14th 2009</span></strong><br />
+- Fixed: Errors importing DNSKEY-record data were not caught and caused program crash.<br />
+<br />
+<strong><span style="text-decoration: underline;">Version 1.0 build 0 - January 24th 2009</span></strong><br />
+- First release.</p>

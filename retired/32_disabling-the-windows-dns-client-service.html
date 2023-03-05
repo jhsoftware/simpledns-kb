@@ -1,0 +1,30 @@
+﻿---
+title: Disabling the Windows "DNS Client" service
+category: 11
+frontpage: false
+comments: true
+created-utc: 2019-01-01
+modified-utc: 2019-01-01
+---
+<p>Windows 2000 and later have a "DNS Client" service which is enabled by default.<br />
+This service caches DNS lookups for the local computer only. This potentially saves a bit of bandwidth and makes DNS lookups a bit faster by preventing DNS lookups from being sent over the Internet connection if the same data has recently been requested on this same computer.</p>
+<p>However, if you are running Simple DNS Plus (which also caches DNS lookups) on a computer on the local network, then there is nothing gained by also running this service on local computers - it will only use extra resources to cache the same data again.<br />
+You will actually save both CPU power and memory by disabling the service on all the local computers.<br />
+Simple DNS Plus acts as a central DNS cache so that if two computers request the same domain name, only one external lookup is needed, and the DNS cache only takes up resources on one computer. This is much more efficient compared to each computer running its own DNS cache.</p>
+<p>Disabling this service also reduces possible confusion about where cached DNS records might be coming from when trouble shooting DNS or other caching issues.</p>
+<p>We recommend disabling the "DNS Client" service on all local computers including the one running Simple DNS Plus:</p>
+<p>In the Windows Control Panel double click "Administrative Tools" (Control Panel below pictured in "Classic View"):</p>
+<p> <img src="img/32/1.png" width="403" height="280" /></p>
+<p>Double click on "Services":</p>
+<p> <img src="img/32/2.png" width="394" height="279" /></p>
+<p>Double click on the "DNS Client" service: </p>
+<p>
+<img src="img/32/3.png" width="422" height="233" />
+</p>
+<p>Select Startup type "Disabled", click the "Stop" button, and click "OK":</p>
+<p> <img src="img/32/4.png" width="410" height="448" /></p>
+<p>
+</p>
+<p>IMPORTANT: On recent Windows versions, the "DNS Client" service is also used to register the computer's network connection in DNS (sends a dynamic update creating a host record on the local DNS server).<br />
+If you need this functionality, then obviously you should not disable the "DNS Client" service.<br />
+The same functionality is however also available in many DHCP servers (including the plug-in for Simple DNS Plus), making it unnecessary for the client computer to do this itself.</p>

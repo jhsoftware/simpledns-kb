@@ -1,0 +1,69 @@
+﻿---
+title: Plug-ins in Simple DNS Plus (v. 5.0 / 5.1)
+category: 8
+frontpage: false
+comments: true
+refs: 31,72
+created-utc: 2019-01-01
+modified-utc: 2019-01-01
+---
+<div style="border: 1px solid #c0c2c4; background-color: #e8eaec;">NOTE: This article is specific to <strong>Simple DNS Plus v. 5.0 /&nbsp;5.1</strong><br />
+Other versions of this article are available for:<br />
+<a href="/kb/109/plug-ins-in-simple-dns-plus-v5-2-v5-3">Simple DNS Plus v. 5.2 /&nbsp;5.3</a><br />
+<a href="/kb/110/plug-ins-in-simple-dns-plus">Simple DNS Plus v. 6.0 and later</a></div>
+
+<div>&nbsp;
+<p>Simple DNS Plus has a plug-in system for providing additional services (such as DHCP) and for fetching DNS data from various sources such as databases and custom programs and scripts.</p>
+
+<p>A list of available plug-ins is available at <a href="https://simpledns.plus/plugins">https://simpledns.plus/plugins</a>.</p>
+
+<h3>Plug-ins user interface</h3>
+
+<p>Plug-ins are instantiated from the Options dialog / Plug-In section:</p>
+
+<p><img height="319" src="img/108/1.png" width="481" /></p>
+
+<p>The plug-in instance dialog has the following tabs; A &quot;Display Name&quot; tab:</p>
+
+<p><img height="102" src="img/108/2.png" width="308" /></p>
+
+<p>A &quot;Plug-in Settings&quot; tab (this tab is not available for plug-in types which do not have any unique settings):</p>
+<img height="83" src="img/108/3.png" width="308" />
+<p>An &quot;Ask About&quot; tab where it is possible to limit which requests are handed to the plug-in.<br />
+(This tab is not available for plug-ins which supply this data through other settings)<br />
+By default all requests are handed to the plug-in, but if the plug-in does a lot of work for each request (such as database lookups) it might by a good idea to limit this to specific domains, IP ranges, and/or record types to optimize performance.</p>
+
+<p><img height="297" src="img/108/4.png" width="308" /></p>
+
+<p>An &quot;Allow Access&quot; tab where it is possible to limit which requests are handed to the plug-in based on client IP address:</p>
+
+<p><img height="176" src="img/108/5.png" width="308" /></p>
+
+<p>Some plug-ins will have their own &quot;View&quot; - a dockable sub-window of the Simple DNS Plus main window:</p>
+
+<p><img height="135" src="img/108/6.png" width="419" /></p>
+
+<h3>Why plug-ins?</h3>
+
+<p>Users often ask us to implement different new features in Simple DNS Plus, and we are always very happy to get these suggestions.<br />
+However some of the suggested features are things that only a smaller group of users would be interested in, and while it might be a really cool feature for those users, it might be a distraction to others.<br />
+Of course adding a new feature also makes the software more complex and gives it a larger &quot;attack surface&quot;.<br />
+So for version 5.0 we decided to implement a plug-in system, allowing us (and 3rd parties) to develop new features without cluttering the base product, and allowing users to select which of these features they want - or don't want.</p>
+
+<p>Some of the befits of this model are:</p>
+
+<ul style="margin-left: 20px;">
+	<li>Simpler user interface; settings for un-used plug-ins are not in the way.</li>
+	<li>Allows us to implement new features without touching the core DNS server code.</li>
+	<li>Less memory usage; only selected plug-in modules are loaded into memory.</li>
+	<li>Smaller attack surface; evil doers can't attack plug-ins that aren't loaded.</li>
+	<li>Great for asynchronous lookups; a plug-in lookup can run in a separate thread not holding up other DNS requests.</li>
+	<li>Allows users and 3rd parties to develop their own plug-ins (see <a href="/kb/31/developing-plug-ins-for-simple-dns-plus-v5-2-and-later">this article</a>)</li>
+	<li>Allows separate distribution of selected plug-in modules and required libraries (reducing size of main installer).</li>
+</ul>
+
+<h3>Open Architecture</h3>
+
+<p>The plug-in architecture is open for users and 3rd parties interested in developing their own plug-ins. Please see <a href="/kb/31/developing-plug-ins-for-simple-dns-plus-v5-2-and-later">this article</a> for details.</p>
+
+</div>

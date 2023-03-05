@@ -1,0 +1,40 @@
+﻿---
+title: Using Simple DNS Plus with WinRoute Firewall
+category: 6
+frontpage: false
+comments: true
+refs: 56
+created-utc: 2019-01-01
+modified-utc: 2019-01-01
+---
+<p>(WinRoute is a product from Kerio Technologies - <a href="http://www.kerio.com" target="_blank">www.kerio.com</a>)</p>
+<p>WinRoute Firewall a DNS Forwarder used to relay DNS requests from clients behind the proxy server.<br />
+If WinRoute Firewall and Simple DNS Plus are running on the same computer, this will conflict as both programs are trying to use port 53.</p>
+<p>You can disable the DNS Forwarder function in WinRoute Firewall. Most likely you won't need this because Simple DNS Plus provides this functionality directly.</p>
+<p>To disable the DNS Forwarder in WinRoute Firewall, in the WinRoute Firewall administration console, under "Configuration", select "DNS Forwarder" in the left list, then un-check "Enable DNS forwarding", and click the "Apply" button:</p>
+<p> <img height="439" src="img/141/1.png" width="619" /></p>
+<p>After changing this setting, you should be able to start the DNS service in Simple DNS Plus (select "Start Server" from the "File" menu).</p>
+<p>WinRoute Firewall also includes firewall functionality which by default will block DNS requests from the Internet.<br />
+If you want to host Internet domain names with Simple DNS Plus, you need to add the following configuration in WinRoute Firewall to allow this.</p>
+<p>In the WinRoute Firewall administration console, under "Configuration", select "Traffic Policy" in the left list, then click the "Add" button to add a new item:</p>
+<p> <img height="438" src="img/141/2.png" width="620" /></p>
+<p>Right-click the cell of the "New rule" line and the "Name" column, and select "Edit rule" from the popup menu:</p>
+<p> <img height="260" src="img/141/3.png" width="480" /></p>
+<p>Change the name to "Simple DNS Plus" and click the "OK" button:</p>
+<p> <img height="309" src="img/141/4.png" width="373" /></p>
+<p>Right-click on the "Destination" cell, and select "Edit destination..." from the popup menu:</p>
+<p> <img height="257" src="img/141/5.png" width="563" /></p>
+<p>In the "Edit Destination" dialog, click the "Add" button and select "Firewall host", and then click the "OK" button:</p>
+<p> <img height="294" src="img/141/6.png" width="446" /></p>
+<p>Right-click on the "Service" cell, and select "Edit service..." from the popup menu:</p>
+<p>
+<img height="257" src="img/141/7.png" width="561" />
+</p>
+<p>In the "Edit Service / Port" dialog, click the "Add" button and select "Service...":</p>
+<p> <img height="126" src="img/141/8.png" width="333" /></p>
+<p>In the "Service" dialog, select "DNS" and click the OK button, and the OK in the previous dialog:</p>
+<p> <img height="142" src="img/141/9.png" width="233" /></p>
+<p>Right-click on the "Action" cell, and select "Permit" from the popup menu:</p>
+<p> <img height="296" src="img/141/10.png" width="620" /></p>
+<p>Click the "Apply" button:</p>
+<p> <img height="438" src="img/141/11.png" width="620" /></p>

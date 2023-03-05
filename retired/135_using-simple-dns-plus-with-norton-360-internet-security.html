@@ -1,0 +1,27 @@
+﻿---
+title: Using Simple DNS Plus with Norton 360 / Internet Security
+category: 6
+frontpage: false
+comments: true
+refs: 52
+created-utc: 2019-01-01
+modified-utc: 2019-01-01
+---
+<p>Norton 360 / Internet Security are products from Symantec - <a href="http://www.symantec.com" target="_blank">http://www.symantec.com</a></p>
+<p>The "Personal Firewall" in Norton 360 / Internet Security monitors network traffic by application / program.</p>
+<p>By default it is configured to "Automatically decide what to do" when programs attempt to communicate with the Internet.<br />
+With this default setting, it should automatically allow Simple DNS Plus to communicate freely.</p>
+<p>If however you have this setting set to "Ask me what to do":</p>
+<p>
+<img height="280" src="img/135/1.png" width="538" />
+</p>
+<p>it will prompt you when Simple DNS Plus attempts to communicate over the Internet.<br />
+Just accept the default "Allow always" and click the "OK" button.</p>
+<p>
+<img height="336" src="img/135/2.png" width="456" />
+</p>
+<p>Simple DNS Plus consists of several executable module (applications) which each must be granted access to the Internet. These modules are:<br />
+- "Simple DNS Plus - Core Engine" (sdnsmain.exe)<br />
+- "Simple DNS Plus - DNS Look Up" (lookup.exe)<br />
+- "Simple DNS Plus - DNS Record Editor" (editrecs.exe)<br />
+- "Simple DNS Plus - GUI" (sdnsgui.exe)</p>

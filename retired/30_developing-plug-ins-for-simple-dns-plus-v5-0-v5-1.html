@@ -1,0 +1,34 @@
+﻿---
+title: Developing plug-ins for Simple DNS Plus (v. 5.0 / 5.1)
+category: 8
+frontpage: false
+comments: true
+refs: 108,85
+created-utc: 2019-01-01
+modified-utc: 2019-01-01
+---
+<div style="border: 1px solid #c0c2c4; background-color: #e8eaec;">NOTE: This article is specific to <strong>Simple DNS Plus v. 5.0 / 5.1</strong><br />
+Other versions of this article are available for:<br />
+<a href="/kb/31/developing-plug-ins-for-simple-dns-plus-v5-2-and-later">Simple DNS Plus v. 5.2 and later</a>&nbsp;</div>
+
+<div>&nbsp;
+<p><span style="color: red;">IMPORTANT:</span> The plug-in interfaces have changed significantly in Simple DNS Plus v. 5.2 (necessary to support new multi-threading and DNS request rule features). If you are considering developing a plug-in for Simple DNS Plus, we recommend that you do this using the new v. 5.2 interfaces -see link above.</p>
+
+<p>The standard Simple DNS Plus installation includes the &quot;sdnsplugin.dll&quot; file (and &quot;sdnsplugin.xml&quot; file to provide Visual Studio intellisense) in the main installation directory.<br />
+To create your own plug-in for Simple DNS Plus, you create a .NET 2.0 library (.dll file) that references &quot;sdnsplugin.dll&quot; with a public class that implements the &quot;IGetHostPlugIn&quot;, &quot;IGetAnswerPlugIn&quot; or &quot;ISkipPlugIn&quot; interface (in sdnsplugin.dll) and optionally Windows Forms controls inheriting from &quot;OptionsUI&quot; and/or &quot;ViewUI&quot; (also in sdnsplugin.dll). Your library must then be placed in the &quot;plugins&quot; sub-directory of the directory where Simple DNS Plus is installed.</p>
+
+<p>For details see the plug-in library documentation:<br />
+<a href="https://simpledns.plus/help-pluginlib/">On-line version</a> / <a href="https://simpledns.plus/help-pluginlib/sdnsplugin.chm">Download CHM version (180 KB)</a></p>
+
+<p>Plug-ins can be developed in any .NET 2.0 language including Visual Basic.NET and C#.</p>
+
+<p>To help you get started, we have recorded a series of screen casts demonstrating how to create a simple plug-in using Visual Basic.NET and Visual Studio 2005:</p>
+
+<p><a href="https://simpledns.plus/screencast-ip1234-1.aspx">Episode 1: The basics</a><br />
+<a href="https://simpledns.plus/screencast-ip1234-2.aspx">Episode 2: Adding an Options dialog user interface</a><br />
+<a href="https://simpledns.plus/screencast-ip1234-3.aspx">Episode 3: Adding a View user interface</a></p>
+
+<p>UPDATE: In the screencasts above, the plug-in configuration string is formatted as XML.<br />
+This is no longer necessary since v. 5.1 build 113. Configuration strings can now be any format you like.</p>
+
+</div>

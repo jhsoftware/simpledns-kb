@@ -1,0 +1,38 @@
+﻿---
+title: Virtual hosting with IIS / PWS using a single web-site
+category: 16
+frontpage: false
+comments: true
+refs: 143,12
+created-utc: 2019-01-01
+modified-utc: 2019-01-01
+---
+<p>NOTE: The technique described in this article is only necessary if you are using IIS (Microsoft Internet Information Services) or PWS (Microsoft Personal Web Server) on Windows 98, Windows Me, NT4 Workstation, Windows 2000 Professional, or Windows XP - because IIS/PWS on these Windows versions are limited to a single web-site.<br />
+The versions of IIS for Windows Server and Windows Vista do not have this limitation (see reference article below).</p>
+<p>"Virtual hosting" means hosting multiple web-sites with different domain names on the same IP address.</p>
+<p>It is possible to simulate virtual hosting by redirecting HTTP requests through ASP script.</p>
+<p>For example let say you have 3 domain names (dom1.com, dom2.com and dom3.com) and want to host a different web-site for each one.</p>
+<p>First, in the web server root directory, create a sub-directory for each site.<br />
+For example:</p>
+<p>   c:\inetpub\wwwroot\dom1<br />
+c:\inetpub\wwwroot\dom2<br />
+c:\inetpub\wwwroot\dom3<br />
+<br />
+Place all the html, image, asp, etc. files for each web-site in the appropriate sub-directory.</p>
+<p>Next in the web server root directory, create a default asp file<br />
+c:\inetpub\wwwroot\default.asp</p>
+<p>- with the following script code:</p>
+<pre>&lt;%
+Select Case Request.ServerVariables("HTTP_HOST")
+Case "dom1.com", "www.dom1.com"
+Response.Redirect "http://www.dom1.com/dom1"
+Case "dom2.com", "www.dom2.com"
+Response.Redirect "http://www.dom2.com/dom2"
+Case "dom3.com", "www.dom3.com"
+Response.Redirect "http://www.dom3.com/dom3"
+End Select
+%&gt;</pre>
+<p>Modify the directory names and script code to match your domain names.<br />
+You should also add script code for error checking etc.</p>
+<p>Each incoming HTTP request will now be redirected to the appropriate sub-directory.</p>
+<p>In Simple DNS Plus, you configure each domain exactly the same - pointing to the same web-server IP address.</p>

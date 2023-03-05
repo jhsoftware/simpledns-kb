@@ -1,0 +1,261 @@
+﻿---
+title: New in Simple DNS Plus v. 1.xx
+category: 17
+frontpage: false
+comments: true
+refs: 92,93,94,95,103,90
+created-utc: 2019-01-01
+modified-utc: 2019-01-01
+---
+<table>
+    <tbody>
+        <tr>
+            <td colspan="2" align="middle" valign="top">
+            <h3 id="ver108">Version 1.08</h3>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>New security feature - Maximum Requests per Second.</strong>
+            <br />
+            Someone sending an extreme number of requests in rapid succession may be a hacker trying to crash the server or prevent others from using the service.<br />
+            Now the IP address of any client exceeding the maximum allowed requests per second will automatically be added to the "IP address Block List" and ignored until manually removed from the list.</td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>New security feature - IP address Block List.</strong>
+            <br />
+            All DNS Requests from IP addresses on this list are simply ignored.<br />
+            This makes it easy to control security or abuse problems.</td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Quick Domain Wizard added.</strong>
+            <br />
+            Automatically and quickly create zones with their web, ftp, mail and name server records.</td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Add new domains in no time.</strong>
+            <br />
+            New zone / domain Copy function makes it quick and easy to add many domains with the same basic record set.</td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Multiple "views" at the same time.</strong>
+            <br />
+            The different views (Performance Graph, DHCP and Active Log) are now sub-windows of the main interface, and can be displayed, sized and arranged any way you like.</td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Standalone DNS Look Up Tool.</strong>
+            <br />
+            The DNS Look Up Tool is now a separate program (remains part of the server distribution), so that it can also be used independently from the DNS server.<br />
+            It can now be run either from the Simple DNS Plus Tools menu as before or directly from the Windows Start menu.</td>
+        </tr>
+        <tr>
+            <td colspan="2" align="middle" valign="top">
+            <br />
+            <hr class="JHHR" />
+            <h3 id="ver107">Version 1.07</h3>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>DNS Spoofing Security option added.</strong>
+            <br />
+            "DNS spoofing" is term used for malicious cache poisoning where forged data is placed in the cache of DNS server.<br />
+            Spoofing attacks can cause serious security problems, for example causing users to be directed to wrong Internet sites or e-mail being routed to non-authorized mail servers.<br />
+            When the spoofing security option is enabled (default), all records in received DNS answers are checked for authority, and records for which the answering DNS server does not have authority are ignored.</td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Support for TXT-records added.</strong>
+            <br />
+            TXT-records are used to hold descriptive text. They have no functional purpose to DNS servers or client programs, but are often used to hold general information about a domain name.</td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Support for intranet 'root zone' added.</strong>
+            <br />
+            When using Simple DNS Plus on an intranet exclusively, you can now define your own 'root zone' and 'root records'.<br />
+            (For Internet DNS servers, the root zone/records are automatic).<br />
+            Thanks to Mark D. Smith of <a href="http://www.obantec.co.uk/" target="_blank">Obantec</a> the tip!</td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Statistics and "Performance Graph View" added to main screen.</strong>
+            <br />
+            Check the server statistics in real time - see <a href="https://simpledns.plus/screenshots">Screen Shots</a>.<br />
+            Thanks to Hans Mosegaard of <a href="http://www.anet.dk/" target="_blank">@Net</a> for the tip!</td>
+        </tr>
+        <tr>
+            <td colspan="2" align="middle">
+            <br />
+            <hr class="JHHR" />
+            <h3 id="ver106">Version 1.06</h3>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>"Offer Recursion" option added.</strong>
+            <br />
+            As both a security and performance measure, you can now select which IP addresses to offer recursion to.<br />
+            Non-local computers and DNS servers may try to take advantage of your DNS server by requesting recursion - they shouldn't do this, they don't need to, and now you can prevent it preserving performance and bandwidth for your own users. </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="middle">
+            <br />
+            <hr class="JHHR" />
+            <h3 id="ver105">Version 1.05</h3>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>DNS Cache handling optimized.</strong>
+            <br />
+            The logic for locating a DNS records in the cache has been changed from searching through the entire cache record by record to an indexed search.<br />
+            In a cache with just 500 records, each lookup is now performed about 50 times faster.<br />
+            This really speeds up the program, and reduces the load on the CPU.</td>
+        </tr>
+        <tr>
+            <td colspan="2" align="middle">
+            <br />
+            <hr class="JHHR" />
+            <h3 id="ver104">Version 1.04</h3>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td>
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Now with integrated DHCP server.</strong>
+            <br />
+            Simple DNS Plus can now automatically assign IP-Addresses and other configurations to client computers - and use this same information as DNS records.<br />
+            Each client computer already has a host name (the computer name). This is combined with a domain name, and A-Records and PTR-records (reverse lookup) are automatically generated.<br />
+            This completely eliminates both manual configuration on client computers AND configuration of DNS records!<br />
+            DHCP records can of course be combined with other (static) DNS records, as well as records from the windows "hosts" file.</td>
+        </tr>
+        <tr>
+            <td colspan="2" align="middle">
+            <br />
+            <hr class="JHHR" />
+            <h3 id="ver103">Version 1.03</h3>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td>
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Persistent cache.</strong>
+            <br />
+            When starting Simple DNS Plus, it can now re-load previously cached records from disk, so it doesn't have to discover them again. Another bandwidth saver...</td>
+        </tr>
+        <tr valign="top">
+            <td>
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Enhanced caching of non-existing names and records.</strong>
+            <br />
+            The logic for caching of non-existing records has been updated, and Simple DNS Plus can now answer even more requests without asking the outside world first. Another bandwidth saver.</td>
+        </tr>
+        <tr>
+            <td colspan="2" align="middle">
+            <br />
+            <hr class="JHHR" />
+            <h3 id="ver102">Version 1.02</h3>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td>
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Support for PTR "in-addr.arpa" records (reverse queries) added.</strong>
+            <br />
+            Simple DNS Plus now also handles IP to Name resolution.</td>
+        </tr>
+        <tr valign="top">
+            <td>
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Forwarding (External Record Resolution) option added.</strong>
+            <br />
+            This option lets external DNS servers handle record resolution thereby saving bandwidth.<br />
+            Combined with the DNS caching capabilities of Simple DNS Plus, this may by the fastest possible solution on slow connections.</td>
+        </tr>
+        <tr>
+            <td colspan="2" align="middle">
+            <br />
+            <hr class="JHHR" />
+            <h3 id="ver101">Version 1.01</h3>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td>
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>DNS Look Up tool added.</strong>
+            <br />
+            Query Simple DNS Plus directly through this simple GUI interface.</td>
+        </tr>
+        <tr>
+            <td colspan="2" align="middle">
+            <br />
+            <hr class="JHHR" />
+            <h3 id="ver100">Version 1.00</h3>
+            </td>
+        </tr>
+        <tr valign="top">
+            <td>
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>The first release of Simple DNS Plus.</strong>
+            <br />
+            Thanks to everybody who e-mailed us about the original Simple DNS and encouraged us to develop this products into what Simple DNS Plus is today.<br />
+            </td>
+        </tr>
+    </tbody>
+</table>

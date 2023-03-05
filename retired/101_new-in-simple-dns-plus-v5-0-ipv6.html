@@ -1,0 +1,43 @@
+﻿---
+title: New in Simple DNS Plus v. 5.0 - IPv6
+category: 17
+frontpage: false
+comments: true
+refs: 95
+created-utc: 2019-01-01
+modified-utc: 2019-01-01
+---
+<p>Why is IPv6 important?<br />
+- The Internet is <a href="http://www.potaroo.net/tools/ipv4/index.html" target="_blank">predicted</a> to run out of IPv4 addresses by 2011.<br />
+- Windows Vista and 2008 have IPv6 enabled by default.<br />
+- Most new routers and other new network devices are IPv6 enabled.</p>
+<p>Anywhere in Simple DNS Plus that you can enter or select an IP address, you can now use both IPv4 and IPv6 addresses.</p>
+<p>On dual-stack (IPv4 / IPv6) computers you can mix and match IPv4 and IPv6 any way you like - for example listen for DNS requests on an IPv4 address and forward to another DNS server over IPv6.</p>
+<p>In the Options dialog / Inbound DNS Requests, it now also lists local IPv6 addresses:</p>
+<p>
+<img height="340" src="img/101/1.png" width="513" />
+</p>
+<p>And in the Options dialog / Outbound DNS Requests section, you can select which IP versions to use when talking to other DNS servers, and which is preferred (tried first):</p>
+<p>
+<img height="340" src="img/101/2.png" width="513" />
+</p>
+<p>Anywhere there is a list of IP addresses/ranges/subnets, for example for DNS recursion, you can enter either IP version:</p>
+<p>
+<img height="340" src="img/101/3.png" width="513" />
+</p>
+<p>The HTTP API can now also be enabled on "All local IPv6 addresses" or a specific IPv6 address:</p>
+<p>
+<img height="340" src="img/101/4.png" width="513" />
+</p>
+<p>When creating a new reverse zone, you can now select either a IPv4 or IPv6 reverse zone:</p>
+<p>
+<img height="297" src="img/101/5.png" width="404" />
+</p>
+<p>Just like the with the A-record, :the AAAA-record properties dialog now has an "Update Reverse Zone" option:</p>
+<p>
+<img height="250" src="img/101/6.png" width="340" />
+</p>
+<p>The Bulk Update Wizard "Find and replace IP address" now also works with IPv6 addreses:</p>
+<p>
+<img height="330" src="img/101/7.png" width="404" />
+</p>

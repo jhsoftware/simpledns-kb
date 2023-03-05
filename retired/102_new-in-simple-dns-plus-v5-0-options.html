@@ -1,0 +1,111 @@
+﻿---
+title: New in Simple DNS Plus v. 5.0 - Options
+category: 17
+frontpage: false
+comments: true
+refs: 95
+created-utc: 2019-01-01
+modified-utc: 2019-01-01
+---
+<p>In v. 5.0 we have moved some options around, added many new ones, and also <a href="/kb/113/retired-features-and-breaking-changes-in-simple-dns-plus-v5-0">retired a few</a>.<br />
+<br />
+In previous versions, we tried to make the Options dialog simpler by hiding some of the lesser used  "advanced options" in the "sdnsplus.ini" file. For version 5.0 however, we decided that ALL options should be available directly from the Options dialog.<br />
+While this does result in a more choices in the Options dialog, we think that it is easier for users to have everything in one place. </p>
+<h3>
+<span style="text-decoration: underline;">Inbound DNS Requests</span>
+</h3>
+- Now possible to specify the port number to listen for DNS requests on (previously advanced option "DNSListenPort").<br />
+Other DNS servers and client expect to find your DNS server on port 53 - but it can be useful to use a different port number for example in combination port mapping on a firewall/NAT router.<br />
+- Now possible to listen for DNS requests on IPv6 addresses. <br />
+<br />
+<img height="319" src="img/102/1.png" width="481" /><br />
+<br />
+<h3><span style="text-decoration: underline;">Outbound DNS Requests</span></h3>
+- NEW: Possible to send outbound requests from IPv4 and/or IPv6 addresses and specify preference for resolving.<br />
+- NEW: Possible to specify from-ip-address for outbound DNS and zone transfer requests.<br />
+This is especially useful for multi-homed servers - for example a secondary server which is only allowed to request zone transfers from a specific IP address.<br />
+- NEW: Possible to specify from-port number for outbound DNS requests.<br />
+<br />
+<img height="319" src="img/102/2.png" width="481" /><br />
+<br />
+<h3><span style="text-decoration: underline;">DNS Forwarding</span></h3>
+<p>- NEW: "Shadow Forwarding" = forward if no matching record is found in local zones.<br />
+<br />
+<img src="img/102/3.png" /></p>
+<h3><span style="text-decoration: underline;">Caching</span></h3>
+<p>- Now possible to specify minimum cache time (advanced option in v. 4.00):</p>
+<p><img height="319" src="img/102/4.png" width="481" /></p>
+<h3><span style="text-decoration: underline;">DNS Data Files</span></h3>
+To comply with Windows logo certification requirements, the default location for the data files (zone files) is now <br />
+"%ProgramData%\JH Software\Simple DNS Plus\ZoneFiles", but you can of course still configure this to any location you like.<br />
+- NEW: The "Defer loading..." option now also works with secondary zones.<br />
+- Possible to specify minimum TTL value for records loaded from zone files (previously advanced option "PermTTLMin").<br />
+Also notice that the "Hosts file" options are gone. This will be handled by the optional <a href="https://simpledns.plus/plugin-hostsfile">Hosts File plug-in</a> instead.<br />
+<br />
+<img height="319" src="img/102/5.png" width="481" /><br />
+<br />
+<h3><span style="text-decoration: underline;">Zone Transfers</span></h3>
+- NEW: "Send only one DNS record per message" option. Version 5.0 will by default send multiple DNS records in each DNS message which is much more efficient. This option allows for older BIND secondaries which do not support multi-record messages in zone transfers.<br />
+<br />
+<img height="319" src="img/102/6.png" width="481" /><br />
+<br />
+<h3><span style="text-decoration: underline;">Super Master/Slave</span></h3>
+To some users coming from other DNS server products, "master/slave" means the same as "primary/secondary",.<br />
+So to avoid any confusion, we have renamed the "Master/Slave" feature "Super Master/Slave".<br />
+Despite the new name, it is still fully compatible with "Master/Slave" in previous versions of Simple DNS Plus.<br />
+- NEW: "Verify zone list from masters every" option - allows for a full synchronization at specified interval. This can be useful with very large zone lists where you want to disable NOTIFY requests (see Miscellaneous section) and enforce a high minimum SOA-record refresh (see Secondary Zones section) to minimize network traffic between master/slave servers.<br />
+<br />
+<img height="319" src="img/102/7.png" width="481" /><br />
+<br />
+<h3><span style="text-decoration: underline;">Secondary Zones</span></h3>
+- NEW: "Max. refresh / IXFR requests to send per second" option can help limit network traffic and load on primary server when many zones need to be refreshed at the same time, for example at startup after longer down period.<br />
+- NEW: "Maximum parallel zone transfers" option. Secondary zones with different primary servers can now be transferred in parallel.<br />
+- NEW: "Retry transferring expired zones every" option.<br />
+- "Use incremental zone transfers (IXFR)" was previously advanced option "UseIXFR".<br />
+- "Enforce minimum values for secondary zone SOA records" was previously advanced options "MinimumRefresh/Retry/Expire".<br />
+<br />
+<img height="319" src="img/102/8.png" width="481" /><br />
+<br />
+<h3><a name="autospf"></a><span style="text-decoration: underline;">Automatic SPF Records</span></h3>
+Automatic SPF Records now has its own section - previously in the "Security" section.<br />
+- NEW: "SPF Record TTL" option.<br />
+<br />
+<img height="319" src="img/102/9.png" width="481" /><br />
+<br />
+<h3><span style="text-decoration: underline;">Lame DNS Requests</span></h3>
+"Lame DNS Requests" now have a name, and its own section - previously in the "Recursion" section.<br />
+- NEW: Can now also synthesize AAAA-records.<br />
+- The "Additional TXT-record" was previously advanced option "NraNaaTXT".<br />
+<br />
+<img height="319" src="img/102/10.png" width="481" /><br />
+<br />
+<h3><span style="text-decoration: underline;">Non-existing Domains</span></h3>
+"Non-existing Domains" now has its own section - previously "NXDOMAIN Redirect" in the "Records" section.<br />
+- NEW: Can now also redirect IPv6 / AAAA requests.<br />
+- The "Additional TXT-record" was previously advanced option "NXDomTXT".<br />
+<br />
+<img height="319" src="img/102/11.png" width="481" /><br />
+<br />
+<h3><span style="text-decoration: underline;">TSIG Dynamic Updates</span></h3>
+In previous versions this was a separate dialog available from the DNS Records window / Tools menu.<br />
+<br />
+<img height="346" src="img/102/12.png" width="494" /><br />
+<br />
+<h3><a name="misc"></a><span style="text-decoration: underline;">Miscellaneous DNS Settings</span></h3>
+<p>or we might have called it the "kitchen sink" :-) This stuff really doesn't group logically with anything else.<br />
+- NEW: "Synthesize empty reverse zones..." - see <a href="http://tools.ietf.org/html/draft-ietf-dnsop-default-local-zones" target="_blank">draft-ietf-dnsop-default-local-zones</a><br />
+- NEW: "Only accept DNS responses from the IP address that request was sent to" - can help prevent DNS spoofing.<br />
+- "Keep the root server list..." previously advanced option "AutoUpdateRoot".<br />
+- NEW: "Specify EDNS0 UDP payload size" - fit more data in DNS packets over UDP.<br />
+<br />
+<img height="319" src="img/102/13.png" width="481" /></p>
+<h3><span style="text-decoration: underline;">Plug-Ins</span></h3>
+For details <a href="/kb/110/plug-ins-in-simple-dns-plus">click here...</a><br />
+<br />
+<img height="319" src="img/102/14.png" width="481" /><br />
+<br />
+<h3><span style="text-decoration: underline;">Log Details</span></h3>
+- NEW: Include EDNS0 details (UDP payload size)<br />
+- NEW: Log internationalized domain names (IDNs) in native characters (log files are UTF8 encoded).<br />
+<br />
+<img height="319" src="img/102/15.png" width="481" />

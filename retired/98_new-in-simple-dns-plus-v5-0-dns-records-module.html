@@ -1,0 +1,116 @@
+﻿---
+title: New in Simple DNS Plus v. 5.0 - DNS Records module
+category: 17
+frontpage: false
+comments: true
+refs: 116,95
+created-utc: 2019-01-01
+modified-utc: 2019-01-01
+---
+<h3>
+<span style="text-decoration: underline;">Faster!</span>
+</h3>
+<p>If you have a few thousand zones or more you will notice a BIG difference in the time it takes to startup the "DNS Records" module. Even with 100,000 zones, it is now ready in just a few seconds.<br />
+Large zones (thousands of records) also load much faster.</p>
+<h3>
+<span style="text-decoration: underline;">"Active" Zone Templates</span>
+</h3>
+<p>The "Quick Zone Wizard" (formerly "Quick Domain Wizard") is template based, and supports multiple templates through a drop-down menu on the Quick button.<br />
+Templates can simply be static standard RFC based zone files, but they can also become "active" by adding ASP style tags (&lt;%...%&gt;), VB.NET code, and custom input fields. <a href="/kb/116/setting-up-quick-zone-templates">More details...</a></p>
+<h3>
+<span style="text-decoration: underline;">SPF-records</span>
+</h3>
+So far SPF-records have been served using the TXT-record type, but there is a new (still experimental) dedicated SPF-record type being added to the DNS protocol, which is now supported in Simple DNS Plus v. 5.0.<br />
+For backwards compatibility it will be necessary to also supply the same information through TXT-records for the foreseable future, so we have included a feature to automatically synchronize TXT-records.<br />
+<br />
+<h3><span style="text-decoration: underline;"><img height="385" src="img/98/1.png" width="425" /></span></h3>
+<h3><span style="text-decoration: underline;">Find Zone function</span></h3>
+Easily find and navigate to zones in large zone lists. Has ctrl+F (Find) and F3 (Find Next) ketboard shortcuts.<br />
+<br />
+<h3><span style="text-decoration: underline;"><img height="123" src="img/98/2.png" width="395" /></span></h3>
+<h3><span style="text-decoration: underline;">New Export functions</span></h3>
+- Export boot file for secondary DNS server<br />
+- Export IP addresses to "hosts" or ".csv" file<br />
+<br />
+<h3><span style="text-decoration: underline;"><img height="412" src="img/98/3.png" width="505" /></span></h3>
+<h3><span style="text-decoration: underline;">New Bulk Update Wizard functions</span></h3>
+<p>4 new bulk update functions have been added, and the Bulk Update Wizard has gotten its own toolbar button:<br />
+<br />
+<img height="129" src="img/98/4.png" width="620" /><br />
+<br />
+The 4 new bulk update functions are:<br />
+<br />
+1) Find and replace host name:<br />
+<br />
+<img height="413" src="img/98/5.png" width="505" /><br />
+<br />
+2) Update DNS record TTL values:</p>
+<p><img height="413" src="img/98/6.png" width="505" /><br />
+<br />
+<br />
+3) Update SOA records:<br />
+<br />
+<img height="413" src="img/98/7.png" width="505" /><br />
+<br />
+4) Update zone e-mail servers (MX-records):<br />
+<br />
+<img height="413" src="img/98/8.png" width="505" /></p>
+<h3><span style="text-decoration: underline;">Select zone groups for export / bulk update</span></h3>
+For all Export Wizard and Bulk Update Wizard functions, you can now specify which zone groups to export/update:<br />
+<br />
+<h3><span style="text-decoration: underline;"><img height="412" src="img/98/9.png" width="505" /></span></h3>
+<h3><span style="text-decoration: underline;">Automatic Zone Refresh</span></h3>
+If you have a zone open (but not changed) in the editor, and the zone file is updated by another process, for example a secondary zone being updated automatically by the server, then the record list will automatically refresh.<br />
+So the "Refresh" button is gone.<br />
+<br />
+<h3><span style="text-decoration: underline;">Zone Folders list</span></h3>
+Version 5.0 has a new Zone Folders list separate from the list of zones.<br />
+This should make it easier to manage large zone lists, for example drag-dropping zones from one group to another.<br />
+The Zone Folders list can be placed either above or to the left of the zone list. Or it can be turned off, in which case all zones are simply listed:<br />
+<br />
+<img height="282" src="img/98/10.png" width="645" /><br />
+<h3><span style="text-decoration: underline;">Default Zone Values dialog</span></h3>
+New dialog to manage default zone values (available from "Tools" menu):<br />
+<br />
+<h3><span style="text-decoration: underline;"><img height="430" src="img/98/11.png" width="414" /></span></h3>
+<h3><span style="text-decoration: underline;">Multi record TTL update and copy/paste/delete</span></h3>
+Select any number of DNS records (using shift/ctrl+cursor key combinations), and set their TTL, copy/paste them to another zone, or delete them - in one operation:<br />
+<br />
+<h3><span style="text-decoration: underline;"><img height="324" src="img/98/12.png" width="475" /></span></h3>
+<h3><span style="text-decoration: underline;">Multi zone move/delete</span></h3>
+Select any number of DNS zones (using shift/ctrl+cursor key combinations), and move or delete them in one operation:<br />
+<br />
+<h3><span style="text-decoration: underline;"><img height="377" src="img/98/13.png" width="260" /></span></h3>
+<h3><span style="text-decoration: underline;">Reload from primary</span></h3>
+Right click a secondary zone and select "Reload from Primary", and the current DNS records in the zone will be flushed, and a new copy fetched from the primary server.<br />
+<br />
+<h3><span style="text-decoration: underline;"><img height="329" src="img/98/14.png" width="291" /></span></h3>
+<h3><span style="text-decoration: underline;">Allow zone transfers from NS-record IPs</span></h3>
+New function to automatically fetch and add IP address of zone's NS-records to the zone transfer permission list:<br />
+<br />
+<h3><span style="text-decoration: underline;"><img height="467" src="img/98/15.png" width="426" /></span></h3>
+<h3><span style="text-decoration: underline;">Default TTL for new DNS records</span></h3>
+New setting in the Zone Properties dialog:<br />
+<br />
+<h3><span style="text-decoration: underline;"><img height="467" src="img/98/16.png" width="426" /></span></h3>
+<h3><span style="text-decoration: underline;">Reverse Zone information panel</span></h3>
+For reverse zones, a new information panel appears below the DNS record list.<br />
+The "Edit IP-to-Name Mappings" button (formerly "Reverse Zone Wizard") button has been renamed and moved here from the main tool bar to clarify the use of this function.<br />
+<h3><span style="text-decoration: underline;"><img height="126" src="img/98/17.png" width="536" /></span></h3>
+<h3><span style="text-decoration: underline;">"Save" button and "zone not saved" bar</span></h3>
+In version 4.00 and earlier, an updated zone is saved and committed to the DNS engine when either a different zone is selected, the Refresh button is clicked, or the DNS Records window is closed.<br />
+This is admittedly not very intuitive and has confused many users.<br />
+So in v. 5.0 we have added a "Save" button, and a "zone not saved" information bar:<br />
+<br />
+<img height="174" src="img/98/18.png" width="609" /><br />
+<br />
+This however also means that updated zones are no longer saved automatically.<br />
+If you try to move to a different zone or close the DNS Records window without saving first, you will be prompted:<br />
+<br />
+<h3><span style="text-decoration: underline;"><img height="159" src="img/98/19.png" width="339" /></span></h3>
+<h3><span style="text-decoration: underline;">Zone File tab in zone properties dialog</span></h3>
+To easier identify a zone's data file.<br />
+<br />
+<h3><span style="text-decoration: underline;"><img height="165" src="img/98/20.png" width="426" /></span></h3>
+<h3><span style="text-decoration: underline;">Count Zones function</span></h3>
+<img height="247" src="img/98/21.png" width="691" />

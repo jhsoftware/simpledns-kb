@@ -1,0 +1,22 @@
+﻿---
+title: Configuring Windows to use local DNS server (Windows NT4)
+category: 11
+frontpage: false
+comments: true
+vgroup: 5
+vname: Windows NT4
+vsort: 108
+refs: 26
+created-utc: 2019-01-01
+modified-utc: 2019-01-01
+---
+<p>First Double click the network icon in the Control Panel:</p>
+<p> <img height="340" src="img/23/1.png" width="415" /></p>
+<p>Then select the "Protocols" tab, select "TCP/IP Protocol", and click the "Properties" button: </p>
+<p> <img height="455" src="img/23/2.png" width="371" /></p>
+<p>In the "Microsoft TCP/IP Properties" dialog, select the "DNS" tab and under "DNS Service Search Order" click the "Add" button".<br />
+Then enter the IP address of the local DNS server (*) in the "TCP/IP DNS Server" box, and click the "Add" button. </p>
+<p> <img height="460" src="img/23/3.png" width="406" /></p>
+<p>Finally click "OK" both in the "Microsoft TCP/IP Properties" and "Network" dialogs to save your changes.</p>
+<p>(*) The DNS server IP address must match an IP address that Simple DNS Plus is configured to listen on in the Options dialog / DNS / Inbound Requests section.<br />
+If you are configuring the computer which Simple DNS Plus is running on, you can use 127.0.0.1 (the "localhost" address) - otherwise you must use an IP address which is accessible over the local area network. </p>

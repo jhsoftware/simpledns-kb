@@ -1,0 +1,46 @@
+﻿---
+title: Security Update (SDNS0501)
+category: 17
+frontpage: false
+comments: true
+created-utc: 2019-01-01
+modified-utc: 2019-01-01
+---
+<strong>Issued:</strong> October 7th 2005
+<p><strong>Problem: </strong>Denial of Service - A specially crafted DNS response packet will cause Simple DNS Plus to freeze and stop responding.</p>
+<p><strong>Impact of vulnerability:</strong> All features of Simple DNS Plus will be unavailable until the software is restarted. This includes DNS resolving and  DNS/DHCP serving. </p>
+<p><strong>Affected versions:</strong> Simple DNS Plus v. 3.20.00-3.20.02, 3.50.00-3.50.01, 3.60.00-3.60.01, and 4.00.00-4.00.05.<br />
+To see which version of Simple DNS Plus you are running, select "About" from the "Help" menu in the main window.</p>
+<p><strong>Affected configuration: </strong>Recursion enabled (see Options dialog &gt; Offer/Perform DNS recursion for...)<br />
+Even if recursion is enabled for LAN clients only, this vulnerability could still be exploited by indirectly causing a local user or system to perform a DNS lookup - for example through an HTML e-mail or web-page.</p>
+<p><strong>Recommendation:</strong> Users should apply the update or disable all recursion in Simple DNS Plus as soon as possible.<br />
+Please note that with recursion disabled, Simple DNS Plus can still be used for hosting DNS for your own domain names, but it will not resolve any other Internet domain names.</p>
+<p><strong>Support: </strong>If you have any questions or comments about this vulnerability and/or update, please contact us at <a href="mailto:support@simpledns.plus" target="_blank">support@simpledns.plus</a></p>
+<p><strong>Acknowledgments:</strong> JH Software thanks Mr. Roy Arends, who discovered and reported this issue, for working with us responsibly to help protect users everywhere.</p>
+<p><strong>Update procedure for v. 4.00.00 - 4.00.05:<br />
+</strong>We recommend <a href="https://simpledns.plus/upgrade">upgrading</a> to the current version 5.0.<br />
+If you do not wish to upgrade at this time, please download and install v. 4.00.07 from <a href="https://simpledns.plus/download-old">https://simpledns.plus/download-old</a>.</p>
+<p><strong>Update procedure for v. 3.60.00 - 3.60.01:<br />
+</strong>We recommend <a href="https://simpledns.plus/upgrade">upgrading</a> to the current version 5.0.<br />
+If you do not wish to upgrade at this time, please update to v. 3.60.02 as follows:<br />
+1) Make sure that you have version 3.60.01 installed (select "About" from the "Help" menu in the main window). If  not, download and install this from <a href="https://simpledns.plus/download-old">https://simpledns.plus/download-old</a>.<br />
+2) Download <a href="https://simpledns.plus/outbox/su/36002/sdnsmain.exe">https://simpledns.plus/outbox/su/36002/sdnsmain.exe</a> to a temporary location<br />
+3) Stop Simple DNS Plus.<br />
+4) Copy the downloaded "sdnsmain.exe" file to the directory where Simple DNS Plus is installed, overwriting the original file.<br />
+5) Start Simple DNS Plus.</p>
+<p><strong>Update procedure for v. 3.50.00 - 3.50.01:<br />
+</strong>We recommend <a href="https://simpledns.plus/upgrade">upgrading</a> to the current version 5.0.<br />
+If you do not wish to upgrade at this time, please update to v. 3.50.02 as follows:<br />
+1) Make sure that you have version 3.50.01 installed (select "About" from the "Help" menu in the main window). If  not, download and install this from <a href="https://simpledns.plus/download-old">https://simpledns.plus/download-old</a>.<br />
+2) Download <a href="https://simpledns.plus/outbox/su/35002/sdnsmain.exe">https://simpledns.plus/outbox/su/35002/sdnsmain.exe</a> to a temporary location.<br />
+3) Stop Simple DNS Plus.<br />
+4) Copy the downloaded "sdnsmain.exe" file to the directory where Simple DNS Plus is installed, overwriting the original file.<br />
+5) Start Simple DNS Plus.</p>
+<p><strong>Update procedure for v. 3.20.00 - 3.20.02:<br />
+</strong>We recommend <a href="https://simpledns.plus/upgrade">upgrading</a> to the current version 5.0.<br />
+If you do not wish to upgrade at this time, please update to v. 3.20.03 as follows:<br />
+1) Make sure that you have version 3.20.02 installed (select "About" from the "Help" menu in the main window). If  not, download and install this from <a href="https://simpledns.plus/download-old">https://simpledns.plus/download-old</a>.<br />
+2) Download <a href="https://simpledns.plus/outbox/su/32003/sdnsmain.exe">https://simpledns.plus/outbox/su/32003/sdnsmain.exe</a> to a temporary location.<br />
+3) Stop Simple DNS Plus.<br />
+4) Copy the downloaded "sdnsmain.exe" file to the directory where Simple DNS Plus is installed, overwriting the original file.<br />
+5) Start Simple DNS Plus.</p>

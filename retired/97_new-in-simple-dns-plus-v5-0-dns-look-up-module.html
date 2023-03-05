@@ -1,0 +1,35 @@
+﻿---
+title: New in Simple DNS Plus v. 5.0 - DNS Look Up module
+category: 17
+frontpage: false
+comments: true
+refs: 95
+created-utc: 2019-01-01
+modified-utc: 2019-01-01
+---
+<h3>
+<span style="text-decoration: underline;">DNS requests over TCP (virtual circuit)</span>
+</h3>
+Most DNS requests, other than zone transfers, are sent over UDP. However in some situations it can beneficial to test if a DNS server also responds via TCP (which it should). This is also know as VC or "virtual circuit" in the classic NSLOOKUP command line tool:<br />
+<br />
+<h3><span style="text-decoration: underline;"><img height="152" src="img/97/1.png" width="358" /></span></h3>
+<h3><span style="text-decoration: underline;">BIND version requests</span></h3>
+It is now possible to do special lookups for the version number of BIND DNS servers (and others):<br />
+<br />
+<h3><span style="text-decoration: underline;"><img height="356" src="img/97/2.png" width="251" /></span></h3>
+<h3><span style="text-decoration: underline;">UDP payload size</span></h3>
+It is now possible to specify the maximum response packet size for UDP requests (an "EDNS0" option).<br />
+This can be useful for testing certain requests which return large response messages.<br />
+For example, IPv6 records were recently added for the Internet .com and .net top level names, making the full referral message for these domains larger than the standard 512 DNS message size.<br />
+<br />
+<img height="143" src="img/97/3.png" width="359" /><br />
+<br />
+<img height="232" src="img/97/4.png" width="465" /><br />
+<h3><span style="text-decoration: underline;">Automatic reverse IPv6 lookup</span></h3>
+When you enter an IPv6 address in the domain name field and click the Look Up button:<br />
+<br />
+<img height="169" src="img/97/5.png" width="303" /><br />
+<br />
+This is automatically converted to a reverse IPv6 lookup:<br />
+<br />
+<img height="158" src="img/97/6.png" width="466" />

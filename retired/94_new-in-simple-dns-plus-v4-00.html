@@ -1,0 +1,130 @@
+﻿---
+title: New in Simple DNS Plus v. 4.00
+category: 17
+frontpage: false
+comments: true
+refs: 91,92,93,95,103,90
+created-utc: 2019-01-01
+modified-utc: 2019-01-01
+---
+<table>
+    <tbody>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Automatic SPF records - help fight spam and phishing scams</strong>
+            <br />
+            Simple DNS Plus can now automatically synthesize SPF records for all local zones making it easy to setup and maintain SPF protection for your domains.<br />
+            For more on SPF see <a href="http://spf.pobox.com" target="_blank">http://spf.pobox.com</a><br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>New option to redirect abusers (synthesize DNS records for unauthorized users)</strong>
+            <br />
+            When someone (unauthorized) from the Internet tries to resolve outside domain names via your DNS server, Simple DNS Plus can now respond with synthesized (false) DNS records, for example to redirect that person to a signup web-page or similar.<br />
+            This feature is also useful when someone is incorrectly pointing their domain registration to your DNS server - for example an ISP customer who has cancelled their account but not changed the domain registration.<br />
+            <div style="text-align: center;"> </div>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>NAT IP alias conversion</strong>
+            <br />
+            In DNS responses to LAN clients only, this function changes A-records which are pointing to a public IP address of the NAT router to point to the corresponding private IP address of a local server.<br />
+            This way, for example HTTP requests from LAN clients for local web-sites will go directly to the local web-server instead of via the NAT router (which often does not work).<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>IP address blocks</strong>
+            <strong>with expiration time and comments<br />
+            </strong>You can now specify how long an IP address block should be in effect.<br />
+            And you can enter comments for each block, for example about why an IP address was blocked or should not be blocked for easy reference.<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>DNS record and zone comment fields</strong>
+            <br />
+            Enter comments for individual DNS records and zones. For example client account numbers, or reminders about what certain records do, etc.<br />
+            For DNS records updated dynamically or via DHCP, the comment field will automatically contain a timestamp and other information about the update.<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>New Bulk Update Wizard</strong>
+            <br />
+            Find and replace an IP address in all local primary zones....<br />
+            Update zone DNS server information in all local primary zones....<br />
+            Promote secondary server to primary (convert all secondary zones to primary)...<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>"Zone Groups" for easier managements of large domain portfolios.</strong>
+            <br />
+            In the "DNS Records" window zone list, you can now arrange zones in custom groups, or by primary/secondary status.<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Updated GUI</strong>
+            <br />
+            Many dialogs re-designed to be easier to use, Windows XP style controls, tabbed documents in main dialog, new wizard dialogs, etc.<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Optimized cache handling</strong>
+            <br />
+            33% reduction in cache memory use, top level referral caching (faster recursion), instant cache clearing.<br />
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <img src="img/dot.gif" />
+            </td>
+            <td>
+            <strong>Miscellaneous</strong>
+            <br />
+            - New "Export zone list" function to save list of zones as csv/text file for use in spreadsheets or databases.<br />
+            - Cut/copy/paste full IP address (all 4 segments) in single action (ctrl+X, ctrl+C, ctrl+V, right-click context menu) in all GUI IP address entry fields.<br />
+            - New right-click menu option in results area of DNS look up tool - "Look Up Selection".<br />
+            - New "-Z" command line option for more detailed reloading/adding of zones.<br />
+            - Zone transfers are no longer allowed by default.<br />
+            - New GUI TTL control to enable seconds entry.<br />
+            - Now shows negative cache entries in snapshot viewer<br />
+            - Zone transfer ACL now also with subnets<br />
+            - HTTP interface now has a default page listing available commands etc.<br />
+            - Many previously "hidden" options now available in GUI options dialog.<br />
+            - And many other minor adjustments and enhancements...</td>
+        </tr>
+    </tbody>
+</table>

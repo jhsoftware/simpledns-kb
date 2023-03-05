@@ -1,0 +1,108 @@
+﻿---
+title: Retired features and breaking changes in Simple DNS Plus v. 5.0
+category: 17
+frontpage: false
+comments: true
+refs: 95
+created-utc: 2019-01-01
+modified-utc: 2019-01-01
+---
+<p>To make Simple DNS Plus even simpler to use and also to "make room" for new stuff, we have done a bit of cleaning up.<br />
+A number of older features have been retired because there are now better alternatives, or because they are no longer relevant.</p>
+<p>
+<strong>1) Runs on Windows 98/2000 and later only</strong>
+<br />
+Simple DNS Plus v. 5.0 is based on the .NET Framework 2.0 which is only available on Windows 98/2000 and later.<br />
+Impact: No longer runs on Windows 95 or NT4.</p>
+<p>
+<strong>2) New binary "boot file" format<br />
+</strong>
+Impact:<br />
+- No longer possible to edit the boot file manually with notepad.<br />
+- Any existing custom script/program accessing the boot file directly will no longer work. <br />
+Workarounds:<br />
+- Tools will be available to import/export to/from the new format.<br />
+- Use command line options, the HTTP API, or the .NET/COM API instead.<br />
+- Access with new SDNSFileLib .NET library</p>
+<p>
+<strong>3) RETIRED: "warning.bat"<br />
+</strong>Previous versions Simple DNS Plus could automatically execute the batch file "warning.bat" whenever it detected an error/warning condition.<br />
+We have retired this feature because Windows XP/2003 and later already have a similar built-in functionality with the Windows Event Log.<br />
+In Windows XP/2003 you can use the "eventtriggers" command line tool, and in Windows Vista/2008 you can catch these events with the Windows Task Scheduler.<br />
+In Simple DNS Plus v. 5.0, events written to the Windows Event Log will have the same event IDs as used for the "warning.bat" in previous versions.<br />
+Impact/Workaround: If you use "warning.bat", execute it through "eventtriggers" or a Windows Task instead.</p>
+<p>
+<strong>4) New format for "raw" logs<br />
+</strong>In previous versions the "raw" logs contained hex encoded data.<br />
+V. 5.0 uses a completely binary format (more "raw") instead, which increases performance and reduces file sizes.<br />
+Impact/Workaround: Any existing script/program processing "raw" logs from Simple DNS Plus will need to be recoded to use the new format.<br />
+The new format can be easily accessed with the new SDNSFileLib .NET library</p>
+<p>
+<strong>5) </strong>
+<strong>Always runs as a Windows Service</strong>
+<br />
+The Options dialog "Run as Windows Service" option has been removed.<br />
+Except on Windows 98/Me, Simple DNS Plus now always runs as a service.</p>
+<p>
+<strong>6) RETIRED: Commands via UDP port<br />
+</strong>In previous versions it was possible to send simple commands via UDP to the "ReloadPort".<span style="font-size: 13px; font-family: helvetica;"><br />
+This is not be available in v. 5.0 since several better methods of communicating/integrating with Simple DNS Plus have been added since this was originally implemented.<br />
+Impact: Any custom script/program doing this will no longer work.<br />
+Workaround: <span style="font-family: arial;">Use command line options, the HTTP API, or the .NET/COM API instead.</span></span></p>
+<p>
+<strong>7) RETIRED: ".new" files<br />
+</strong>In previous versions it was possible to have Simple DNS Plus scan the data folder for ".new" files and load these as new DNS zones.<br />
+<span style="font-family: helvetica; font-size: 13px;">This is not available in v. 5.0 since several better methods of communicating/integrating with Simple DNS Plus have been added since this was originally implemented.</span><br />
+Impact: Any custom script/program doing this will no longer work.<br />
+Workarounds:<br />
+- Setup another script/program to scan for and rename the ".new" files and then have it prompt Simple DNS Plus to load the new zone via command line options. <br />
+- <span style="font-size: 13px;">Use command line options, the HTTP API, or the .NET/COM API instead.</span></p>
+<p>
+<strong>8) RETIRED: Security options "Prevent DNS spoofing", "Ignore UDP packets originating from port zero", "Detect and close Telnet connections"<br />
+</strong>In v. 5.0 the "Prevent DNS spoofing" option is permanently on.<br />
+The other two options had minimal impact and have therefore been removed for simplicity.<br />
+<br />
+<strong>9) RETIRED: "DNS Look Up" tool as COM/ActiveX object<br />
+</strong>Since we have migrated Simple DNS Plus to the .NET platform and this does not support EXE COM servers, the DNS Look Up tool is no longer a COM/ActiveX object.<br />
+Impact: Any script/program using this will not work with v. 5.0.</p>
+<p>
+<strong>10) RETIRED: Advanced options "AutoCName"<br />
+</strong>This was a non-standard feature which we discourage using.<br />
+This is not available in v. 5.0.</p>
+<p>
+<strong>11) RETIRED: Advanced options "ShowAddIP", "MinTimeOut", and "ErrorFileDump"<br />
+</strong>These options are no longer relevant, and are not available in v. 5.0.</p>
+<p>
+<strong>12) RETIRED: Advanced options "ServiceName" and "ServiceDesc"<br />
+</strong>In previous versions these options were used to configure service names for multiple instances.<br />
+In v. 5.0, instance service names are configured using the "instance.txt" file. For details see <a href="/kb/9/can-i-run-multiple-instances-of-simple-dns-plus-on-the-same-computer-v4-00-and-earlier">this article</a>.</p>
+<p>
+<strong>13) XML based configuration files<br />
+</strong>Previous versions of Simple DNS Plus used .ini files. In v. 5.0 all configuration files are XML based.<br />
+Impact/workaround: Any program/script accessing the Simple DNS Plus configuration files directly will have to be recoded to use the new XML format.</p>
+<p>
+<strong>14) RETIRED: Advanced options "DelOnlyZones", "DelOnlyAllTop", "DelOnlyExclude"<br />
+</strong>These "delegation only" options were implemented to counter Verisign's "Site Finder Service".<br />
+It doesn't look like this is an issue anymore so we won't migrate these options for now.</p>
+<p>
+<strong>15) New counters in HTTP API "status" page<br />
+</strong>The HTTP API "status" function now uses a different and larger set of counters.<br />
+Impact: Any program/script "screen scraping" the status text page will not find the same values in the same locations.<br />
+Workaround: Use the new "status?format=xml" variant for structured access to these values.<br />
+See <a href="/kb/99/new-in-simple-dns-plus-v5-0-http-api">/kb/99/new-in-simple-dns-plus-v5-0-http-api</a></p>
+<p>
+<strong>16) <span style="text-decoration: line-through;">RETIRED</span>: DHCP option "Automatically update DNS"<br />
+</strong>Instead of inserting records into local DNS zones when a new DHCP lease is issued, the <a href="https://simpledns.plus/plugin-dhcp">DHCP Server plug-in</a> in v. 5.0 provides host and reverse records directly from live DHCP data.<br />
+Impact: Since DHCP related DNS records won't actually exist in any DNS zone, such records won't be transferred to or be available on secondary DNS servers.<br />
+Workaround: Use a DNS suffix only delegated to the one DNS server.<br />
+<span style="font-weight: bold; color: red;">UN-RETIRED:</span> In v. 5.1 build 122 options were re-added to update DNS records in local zones.</p>
+<p>
+<strong>17) RETIRED: Advanced options "DHCPWINS", "DHCPNBDD", "DHCPNODE", "DHCPScope".</strong>
+<br />
+These WINS and NETBIOS settings for DHCP have been retired because they are outdated and we haven't seen any use of them for a long time.</p>
+<p>
+<strong>18) RETIRED: Command line option "SDNSPLUS -K" / "tsigkeys.ini" file<br />
+</strong>This command line option was used to reload the TSIG keys file (tsigkeys.ini).<br />
+TSIG keys are no longer in a separate file, but are now part of the options file (sdnsplus.config.xml).<br />
+The options file can be reloaded with the "SDNSPLUS -O" command line option.<br />
+Please note that TSIG key secrets are scrambled in the options file. You can enter non-scrambled Base64 encoded secrets by prefixing the value with #.</p>

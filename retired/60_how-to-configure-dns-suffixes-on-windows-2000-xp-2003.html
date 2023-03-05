@@ -1,0 +1,31 @@
+﻿---
+title: How to configure DNS suffixes on Windows 2000/XP/2003
+category: 11
+frontpage: false
+comments: true
+refs: 74,76,142
+created-utc: 2019-01-01
+modified-utc: 2019-01-01
+---
+<p>"DNS suffixes" are used for resolving unqualified domain names (names with no dots).</p>
+<p>In the Windows Control Panel, double-click the "Network and Dial-up Connections" (or "Network Connections" on Windows XP / 2003) icon:</p>
+<p>
+<img height="315" src="img/60/1.png" width="541" />
+</p>
+<p>Right-click a network connection icon and select "Properties" from the pop-up menu:</p>
+<p>
+<img height="294" src="img/60/2.png" width="476" />
+</p>
+<p>In the network connection Properties dialgo, select "Internet Protocol (TCP/IP)" and click the "Properties" button:</p>
+<p>
+<img height="430" src="img/60/3.png" width="367" />
+</p>
+<p>In the "Internet Protocol (TCP/IP) Properties" dialog, click the "Advanced..." button:</p>
+<p>
+<img height="448" src="img/60/4.png" width="404" />
+</p>
+<p>In the "Advanced TCP/IP Settings" dialog, select the "DNS" tab, and specify which DNS suffixes to use for resolving unqualified domain names:</p>
+<p>
+<img height="481" src="img/60/5.png" width="404" />
+</p>
+<p>If you choose the first (and default) option to append primary and connection specific DNS suffixes, then you will also need to configure the primary DNS suffix. See reference articles below.</p>

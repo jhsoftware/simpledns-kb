@@ -1,0 +1,38 @@
+﻿---
+title: Using Simple DNS Plus with OneCare firewall
+category: 6
+frontpage: false
+comments: true
+refs: 52
+created-utc: 2019-01-01
+modified-utc: 2019-01-01
+---
+<p>OneCare is a product from Microsoft (<a href="http://www.microsoft.com/onecare" target="_blank">http://www.microsoft.com/onecare</a>) which includes a firewall and other security functions.</p>
+<p>The OneCare firewall monitors network traffic by application (program).</p>
+<p>Simple DNS Plus consists of several executable modules, each of which are considered a "program" by OneCare and which must be granted access to the Internet. These modules are:<br />
+- "Simple DNS Plus - Core Engine" (sdnsmain.exe)<br />
+- "Simple DNS Plus - DNS Look Up" (lookup.exe)<br />
+- "Simple DNS Plus - DNS Record Editor" (editrecs.exe)<br />
+- "Simple DNS Plus - GUI" (sdnsgui.exe)</p>
+<p>The first time you use each of these modules on a computer with OneCare, you should get a messages like this:</p>
+<p>
+<img height="452" src="img/136/1.png" width="480" />
+</p>
+<p>Simply click "Allow this program" each time this happens.</p>
+<p>The first time you run Simple DNS Plus on a computer with OneCare, you will probably get the following error message:</p>
+<p>
+<img height="262" src="img/136/2.png" width="486" />
+</p>
+<p>This should only happen the first time.<br />
+After you allow Simple DNS Plus access to the Internet (see above) this should not happen again.<br />
+Simply restart Simple DNS Plus, and it should work fine.</p>
+<p>If you encounter any problems, in the OneCare user interface, click "Change settings":</p>
+<p> <img height="330" src="img/136/3.png" width="428" /></p>
+<p>In the "OneCare Settings" dialog, under the "Firewall" tab, make sure "Notify me when the firewall blocks an application" is checked.<br />
+Then click the "Advanced" button:</p>
+<p>
+<img height="546" src="img/136/4.png" width="456" />
+</p>
+<p>In the "OneCare Firewall Advanced Settings" dialog under the "Programs" tab, make sure all Simple DNS Plus... items are allowed access: </p>
+<p>
+<img height="446" src="img/136/5.png" width="416" /> </p>

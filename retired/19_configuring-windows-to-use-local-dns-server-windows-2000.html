@@ -1,0 +1,36 @@
+﻿---
+title: Configuring Windows to use local DNS server (Windows 2000)
+category: 11
+frontpage: false
+comments: true
+vgroup: 5
+vname: Windows 2000
+vsort: 106
+refs: 26
+created-utc: 2019-01-01
+modified-utc: 2019-01-01
+---
+<p>First Double click the "Network and Dial-up Connections" icon in the Control Panel:</p>
+<p> <img height="279" src="img/19/1.png" width="422" /></p>
+<p>Then right-click the icon for the network connection and select "Properties" from the pop-up menu:</p>
+<p>
+<img height="318" src="img/19/2.png" width="467" />
+</p>
+<p>Then in the connection properties dialog, select "Internet Protocol (TCP/IP)" and click the "Properties button": </p>
+<p> <img height="430" src="img/19/3.png" width="367" /></p>
+<p>In the "Internet Protocol (TCP/IP) Properties" dialog, check "Use the following DNS server addresses", and enter the IP address of the local DNS server (*) as the "Preferred DNS Server":</p>
+<p> <img height="448" src="img/19/4.png" width="404" /></p>
+<p>Finally click "OK" both in the "TCP/IP Properties" and "Network" dialogs to save your changes.</p>
+<p> (*) The DNS server IP address must match an IP address that Simple DNS Plus is configured to listen on in the Options dialog / DNS / Inbound Requests section.<br />
+If you are configuring the computer which Simple DNS Plus is running on, you can use 127.0.0.1 (see below) - otherwise you must use an IP address which is accessible over the local area network.</p>
+<p>
+<strong>
+<span style="text-decoration: underline;">Windows 2000 and DNS server 127.0.0.1</span>
+</strong>
+</p>
+<p>If you try to enter "127.0.0.1" as DNS server in the TCP/IP configuration of a Windows 2000 computer, you will get the following error message:</p>
+<p>
+<img height="101" alt="IP addresses starting with 127 are not valid because they are reserved for loopback addresses. Please specify some other valid value between 1 and 223." src="img/19/5.png" width="542" /> </p>
+<p>This only happens in Windows 2000 and we have no idea why Microsoft did this. But they must have realized that this was a mistake because this doesn't happen in later Windows versions such as XP and 2003.</p>
+<p>To solve this, we have created a small tool which can set the DNS server to 127.0.0.1 on Windows 2000.<br />
+Simply download and run: <a href="https://simpledns.plus/outbox/setdns127.exe">setdns127.exe</a></p>

@@ -1,0 +1,154 @@
+﻿---
+title: Plug-ins in Simple DNS Plus (v. 5.2 / 5.3)
+category: 8
+frontpage: false
+comments: true
+refs: 31,72
+created-utc: 2019-01-01
+modified-utc: 2019-01-01
+---
+<div style="border: 1px solid #c0c2c4; background-color: #e8eaec;">NOTE: This article is specific to <strong>Simple DNS Plus v. 5.2 /&nbsp;5.3</strong><br />
+Other versions of this article are available for:<br />
+<a href="/kb/108/plug-ins-in-simple-dns-plus-v5-0-v5-1">Simple DNS Plus v. 5.0 /&nbsp;5.1</a><br />
+<a href="/kb/110/plug-ins-in-simple-dns-plus">Simple DNS Plus v. 6.0 and later</a></div>
+
+<div>&nbsp;
+<p>Simple DNS Plus has a plug-in system for providing additional services (such as DHCP) and for fetching DNS data from various sources such as databases and custom programs and scripts.</p>
+
+<p>A list of available plug-ins is available at <a href="https://simpledns.plus/plugins">https://simpledns.plus/plugins</a>.</p>
+
+<h3>Plug-ins user interface</h3>
+
+<p>Plug-ins are instantiated from the Options dialog / Plug-In section:</p>
+
+<p><img alt="pi3.png" height="425" src="img/109/1.png" width="641" /></p>
+
+<p>The plug-in instance dialog has (up to) 3 tabs:</p>
+
+<p>1) The &quot;General&quot; tab:</p>
+
+<p><img alt="pi1.png" height="364" src="img/109/2.png" width="422" /></p>
+
+<ul>
+	<li><strong>Plug-in instance display name</strong><br />
+	This name will be displayed in the plug-in instances list, in the logs, and in the plug-in View tab.</li>
+	<li><strong>Listed IP addresses</strong>
+	<ul>
+		<li><strong>Perform DNS recursion for IP addresses listed by this plug-in</strong><br />
+		When enabled, Simple DNS Plus will resolve DNS requests received from IP addresses listed by this plug-in - even if they are not listed in the Options dialog / DNS / Recursion section.<br />
+		This option is only available for some plug-ins - typically those that in some way lists IP addresses.<br />
+		(Note to developers: ths option is enabled for plug-ins that implement the IListsIPAddress interface).</li>
+		<li><strong>Whitelist IP addresses listed by this plug-in from all DNSBLs</strong><br />
+		When enabled, Simple DNS Plus will respond to any DNS request for A-records for names starting with a reversed IP address, that is listed by this plug-in, with a &quot;name does not exist&quot; error code.<br />
+		When a client computer (who's IP address is listed by this plug-in) sends an e-mail to a local e-mail server which is using this same Simple DNS Plus server, and this e-mail server looks up the sender's IP address (the client computer) in some DNSBL list, this option ensures that the result is always &quot;not black listed&quot;.<br />
+		This can be useful because dynamic IP address ranges are often black listed as e-mail senders.<br />
+		This option is only available for some plug-ins - typically those that in some way lists IP addresses.<br />
+		(Note to developers: ths option is enabled for plug-ins that implement the IListsIPAddress interface).</li>
+	</ul>
+	</li>
+	<li><strong>Threading</strong>
+	<ul>
+		<li><strong>Max. parallel threads</strong><br />
+		Specify how many threads may access the plug-in in parallel.<br />
+		This option is only available for plug-ins that implement multi-threading.<br />
+		<strong>Max. threads in queue</strong><br />
+		The maximum number of threads (other DNS requests) that may be queued to wait for other threads to finish processing in the plug-in.</li>
+	</ul>
+	</li>
+</ul>
+
+<p>2) The &quot;Plug-in Settings&quot; tab.</p>
+
+<p>The content of this tab is defined by the each individual plug-in type:<br />
+(This tab is not available for plug-ins which do not have any unique settings)</p>
+
+<p><img alt="pi2.png" height="97" src="img/109/3.png" width="422" /></p>
+
+<p>3) The &quot;DNS Requests&quot; tab</p>
+
+<p>On this tab it is possible to limit which DNS requests are processed by the plug-in.<br />
+(This tab is not available for plug-ins which do not handle DNS requests)<br />
+By default all DNS requests are processed by the plug-in, but if the plug-in does a lot of work for each request (such as database lookups) it might by a good idea to limit this to specific domains, IP ranges, record types, etc. in order to optimize performance.</p>
+
+<p><img alt="new52a.png" height="364" src="img/109/4.png" width="422" /></p>
+
+<p>You can set &quot;Process DNS requests&quot; to either &quot;Always&quot;, &quot;Never&quot;, or &quot;Only when...&quot;.<br />
+With the &quot;Only when...&quot; option, you can configure a list of &quot;rules&quot; which determine what DNS requests are process or not.<br />
+Available &quot;rules&quot; are:</p>
+
+<ul>
+	<li>Sender's IP address
+	<ul>
+		<li>is a specific IP address</li>
+		<li>is in a list of IP addresses / ranges / subnets</li>
+		<li>is an IPv4 address</li>
+		<li>is an IPv6 address</li>
+		<li>is listed in another plug-in</li>
+	</ul>
+	</li>
+	<li>Requested domain name
+	<ul>
+		<li>is a specific domain name (or wildcard name)</li>
+		<li>is in a list of domain names / wildcard names</li>
+		<li>is listed in another plug-in</li>
+	</ul>
+	</li>
+	<li>Requested record type is a specific type</li>
+	<li>Reverse lookup IP address
+	<ul>
+		<li>is a specific IP address</li>
+		<li>is in a list of IP addresses / ranges / subnets</li>
+		<li>is an IPv4 address</li>
+		<li>is an IPv6 address</li>
+		<li>is listed in another plug-in</li>
+	</ul>
+	</li>
+	<li>Request is DNSBL lookup</li>
+	<li>DNSBL lookup IP address
+	<ul>
+		<li>is a specific IP address</li>
+		<li>is in a list of IP addresses / ranges / subnets</li>
+		<li>is listed in another plug-in</li>
+	</ul>
+	</li>
+	<li>Sender requests recursion (RD)</li>
+	<li>Server offers recursion (RA)</li>
+	<li>Date/time is (see <a href="/kb/72/how-to-schedule-plug-ins-to-take-effect-at-specific-times">this article</a>)</li>
+	<li>Sublist of rules</li>
+	<li>Rule from plug-in</li>
+</ul>
+
+<p>You can reverse the result of a selected rule by clicking the [Not] button.</p>
+
+<p>Rules are evaluated in the listed order - you can re-arrage this using the Up/Down button.</p>
+
+<h3>Views&nbsp;</h3>
+
+<p>Some plug-ins will have their own &quot;View&quot; - a dockable sub-window of the Simple DNS Plus main window:</p>
+
+<p><img height="135" src="img/109/5.png" width="419" /></p>
+
+<h3>Why plug-ins?</h3>
+
+<p>Users often ask us to implement different new features in Simple DNS Plus, and we are always very happy to get these suggestions.<br />
+However some of the suggested features are things that only a smaller group of users would be interested in, and while it might be a really cool feature for those users, it might be a distraction to others.<br />
+Of course adding a new feature also makes the software more complex and gives it a larger &quot;attack surface&quot;.<br />
+So for version 5.0 we decided to implement a plug-in system, allowing us (and 3rd parties) to develop new features without cluttering the base product, and allowing users to select which of these features they want - or don't want.</p>
+
+<p>Some of the benefits of this model are:</p>
+
+<ul style="margin-left: 20px;">
+	<li>Simpler user interface; settings for un-used plug-ins are not in the way.</li>
+	<li>Allows us to implement new features without touching the core DNS server code.</li>
+	<li>Less memory usage; only selected plug-in modules are loaded into memory.</li>
+	<li>Smaller attack surface; evil doers can't attack plug-ins that aren't loaded.</li>
+	<li>Great for asynchronous lookups; a plug-in lookup runs in a separate thread not holding up other DNS requests.</li>
+	<li>Allows users and 3rd parties to develop their own plug-ins (see <a href="/kb/31/developing-plug-ins-for-simple-dns-plus-v5-2-and-later">this article</a>)</li>
+	<li>Allows separate distribution of selected plug-in modules and required libraries (reducing size of main installer).</li>
+</ul>
+
+<h3>Open Architecture</h3>
+
+<p>The plug-in architecture open for users and 3rd parties interested in developing their own plug-ins. Please see <a href="/kb/31/developing-plug-ins-for-simple-dns-plus-v5-2-and-later">this article</a> for details.</p>
+
+</div>
