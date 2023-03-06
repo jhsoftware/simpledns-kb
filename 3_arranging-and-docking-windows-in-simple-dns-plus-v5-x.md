@@ -15,7 +15,7 @@ But once you "get it", it is really very simple to use.
 
 The video below shows how to use the docking system:
 
-<video src="../img/3/kb3b.mp4" controls=""/>
+<video src="img/3/kb3b.mp4" controls />
 
 (Sorry for the multiple cursor etc. - the video is a screen recording of an old Flash demo - which browsers cannot display anymore)
 
