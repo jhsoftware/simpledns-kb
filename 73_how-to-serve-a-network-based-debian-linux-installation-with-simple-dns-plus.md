@@ -27,7 +27,7 @@ From the main Window click the "Options" button, then select "Plug-ins" in the l
 
 ![](img/73/1.png)
 
-In the "DHCP Server Plug-In Instance" dialog, select the "Plug-In Settings" tab, fill in the "DNS Suffix" and IP address range, and click the "DHCP Options..." buttion:
+In the "DHCP Server Plug-In Instance" dialog, select the "Plug-In Settings" tab, fill in the "DNS Suffix" and IP address range, and click the "DHCP Options..." button:
 
 ![](img/73/2.png)
 
@@ -55,5 +55,5 @@ On the second computer you should see a matching boot sequence:
 
 ![](img/73/8.gif)
 
-Shortly after, the Debian Linux installation prompts should appear, and it will automatically download remaning files from the Internet:  
+Shortly after, the Debian Linux installation prompts should appear, and it will automatically download remaining files from the Internet:  
 ![](img/73/9.png)  
