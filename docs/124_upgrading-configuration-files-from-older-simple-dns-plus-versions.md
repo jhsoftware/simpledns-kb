@@ -33,5 +33,5 @@ You can optionally specify an alternate application data folder (for example whe
 
 The tool will run through a series of steps to upgrade the files:
 
-![](/img/124/upgrade5to9.png)
+![](img/124/upgrade5to9.png)
 

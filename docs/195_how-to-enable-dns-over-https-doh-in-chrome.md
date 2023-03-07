@@ -19,4 +19,4 @@ To enable this in Chrome, do the following:
 - Click "Use secure DNS" switch to enable.
 - Here you can specify your DNS provider / enter a DoH query URL:
 
-![](/img/195/doh-chrome.png)
+![](img/195/doh-chrome.png)

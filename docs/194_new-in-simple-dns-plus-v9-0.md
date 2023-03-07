@@ -52,23 +52,23 @@ Note: Safari (on MacOS and IOS) does not have such a setting, but DoT/DoH can be
 In the Simple DNS Plus Options dialog, in the "DNS / Inbound requests" section, there is now a list of protocols / interfaces that Simple DNS Plus listens for DNS requests via / on.
 These can be either UDP/TCP (the classic and only option in previous versions), DoT (DNS over TLS), and DoH (DNS over HTTPS):
 
-![](/img/194/inbound-list.png)
+![](img/194/inbound-list.png)
 
 The following options can be configured for DoT (DNS over TLS):
 
-![](/img/194/inbound-dot.png)
+![](img/194/inbound-dot.png)
 
 The following options can be configured for DoH (DNS over HTTPS):
 
-![](/img/194/inbound-doh.png)
+![](img/194/inbound-doh.png)
 
 In the DNS Look Up tool, it is now also possible to select DoT and DoH network protocols (in addition to UDP and TCP):
 
-![](/img/194/lookup-protocol.png)
+![](img/194/lookup-protocol.png)
 
 When the DoH protocol is selected, the DoH query URL and the HTTP method (GET or POST) can be specified, and you can select to use the DNS server and port from the query URL (or to specify them seperately):
 
-![](/img/194/lookup-http.png)
+![](img/194/lookup-http.png)
 
 
 **About SSL certificates**
@@ -92,7 +92,7 @@ To make this a bit easier, we have added a helper dialog for this, which lets yo
 A "Bind SSL certificate..." button can be found in the "Listen for inbound DNS requests" dialog with the "DoH" protocol selected (see above) and on the Options dialog / HTTP API page. 
 Clicking this button will bring up the following dialog:
 
-![](/img/194/bind-ssl.png)
+![](img/194/bind-ssl.png)
 
 
 ### New "HTTPS" DNS record type{#https-rectype}
@@ -105,11 +105,11 @@ The HTTPS record-type is defined in a ["Service binding and parameter specificat
 
 To create a new HTTPS-record in Simple DNS Plus, right-click a zone in the left list in the DNS Records window, select "Other new record" from the pop-up menu, and then select "HTTPS". This will open the following dialog:
 
-![](/img/194/https-record.png)
+![](img/194/https-record.png)
 
 The DNS Look Up tool has also been updated to support the HTTPS record type:
 
-![](/img/194/https-lookup.png)
+![](img/194/https-lookup.png)
 
 
 ### Miscellaneous updates{#misc}

@@ -18,4 +18,4 @@ To enable this in Firefox, do the following:
 - In the "Network Settings" dialog, scroll to the bottom and check "Enable DNS over HTTPS".
 - Here you can specify your DNS provider / enter a DoH query URL:
 
-![](/img/197/doh-firefox.png)
+![](img/197/doh-firefox.png)

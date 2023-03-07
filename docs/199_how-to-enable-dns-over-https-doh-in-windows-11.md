@@ -23,27 +23,27 @@ For example if your DNS server IP address is `1.2.3.4` and its host name is `exa
 
 To do this, click the Search button on the Windows task bar, enter "powershell", click on "Run as administrator":
 
-![](/img/199/win11-1.png)
+![](img/199/win11-1.png)
 
 Enter the command from above:
 
-![](/img/199/win11-2.png)
+![](img/199/win11-2.png)
 
 Next, click the Windows Start button, and click on "Settings":
 
-![](/img/199/win11-3.png)
+![](img/199/win11-3.png)
 
 In the "Settings" dialog, select "Network & Internet" and click on your network connection:
 
-![](/img/199/win11-4.png)
+![](img/199/win11-4.png)
 
 Next to "DNS server assignment", click the "Edit" button:
 
-![](/img/199/win11-5.png)
+![](img/199/win11-5.png)
 
 In the "Edit DNS settings" dialog, select "Manual", turn it on for IPv4 and/or IPv6, under "Preferred DNS"  enter the IP address of your DNS server, and under "Preferred DNS encryption" select one of the "Encrypted..." options:
 
-![](/img/199/win11-6.png)
+![](img/199/win11-6.png)
 
 Note that the last setting ("Preferred DNS encryption) will only be available if you have completed the first steps above (adding the DNS server IP address to the "list of known servers" through PowerShell).
 

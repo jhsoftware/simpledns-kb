@@ -16,11 +16,11 @@ A list of available plug-ins is available at <https://simpledns.plus/plugins>
 
 From the main window, click the "Plug-Ins" button:
 
-![](/img/110/1.png)
+![](img/110/1.png)
 
 This will bring up the "Plug-In instances" dialog:
 
-![](/img/110/2.png) 
+![](img/110/2.png) 
 
 Click the "Add..." button to add a new plug-in instance, the "Properties..." button to edit the selected plug-in instance,
 the "Remove" button to remove the selected plug-in instance, the "Up" / "Down" button to change the order of the plug-in instances,
@@ -34,13 +34,13 @@ The first input field is the **Plug-in instance display name**, which is the nam
 
 The content of this tab is defined by the each individual plug-in type (this tab is not available for plug-ins which do not have any unique settings):
 
-![](/img/110/3.png) 
+![](img/110/3.png) 
 
 **The "DNS Requests" tab**
 
 On this tab you can limit which DNS requests are processed by the plug-in (this tab is not available for plug-ins which do not handle DNS requests).
 
-![](/img/110/4.png)
+![](img/110/4.png)
 
 By default all DNS requests are processed by the plug-in, but if the plug-in does a lot of work for each request (such as database lookups) it might by a good idea to limit this to specific domains, IP ranges, record types, etc. in order to optimize performance.
 
@@ -86,7 +86,7 @@ Rules are evaluated in the listed order - you can re-arrage this using the Up/Do
 On this tab you can set options for listed IP addresses (this tab is not available for plug-ins which do not "list" IP addresses).
 (Note to developers: ths option is enabled for plug-ins that implement the IListsIPAddress interface).
 
-![](/img/110/5.png)
+![](img/110/5.png)
 
 - **Perform DNS recursion for IP addresses listed by this plug-in**\
 When enabled, Simple DNS Plus will resolve DNS requests received from IP addresses listed by this plug-in - even if they are not listed in the Options dialog / DNS / Recursion section.
@@ -101,7 +101,7 @@ This can be useful because dynamic IP address ranges are often black listed as e
 
 Some plug-ins will have their own "View" - a dockable sub-window of the Simple DNS Plus main window:
 
-![](/img/110/6.png)
+![](img/110/6.png)
 
 ### Why plug-ins?
 

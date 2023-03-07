@@ -17,26 +17,26 @@ You can generate such a file for your own DNS servers at <https://simpledns.plus
 
 Enter you company name, select the protocol (DoT or DoH), enter you DNS server host name or query URL, and the DNS server IP addresses, click the Download button, and click/open the downloaded file:
 
-![](/img/201/mac1.png)
+![](img/201/mac1.png)
 
 A "Profile installation" message should appear:
 
-![](/img/201/mac2.png)
+![](img/201/mac2.png)
 
 Open the system menu, and select "System Preferences...":
 
-![](/img/201/mac3.png)
+![](img/201/mac3.png)
 
 Go to "Profiles":
 
-![](/img/201/mac4.png)
+![](img/201/mac4.png)
 
 The downloaded profile should appear. Click the "Install..." button:
 
-![](/img/201/mac5.png)
+![](img/201/mac5.png)
 
 Click "Install" in the confirmation dialog:
 
-![](/img/201/mac6.png)
+![](img/201/mac6.png)
 
 You will be prompted to enter your password to confirm, and then the profile is installed.

@@ -27,7 +27,7 @@ Executes a custom JavaScript function to do a DNS lookup returning multiple DNS 
 
 On the "Plug-In Settings" tab, enter the following settings (explained below the image):
 
-![](/img/205/settings.png)
+![](img/205/settings.png)
 
 - **Where to store JavaScript code**\
 The first option "With the plug-in configuration in the Simple DNS Plus database" makes management and backup easier, while the second option "In a separate file" makes it possible to edit the file in another program - like Visual Studio Code to get JavaScript syntax highlighting etc.
@@ -168,13 +168,13 @@ In Chrome, open the address <chrome://inspect>, select the "Devices" section (sh
 
 Note that if you used a debugging port number other than 9222, then you need to add this ("localhost:&lt;port&gt;") using the "Configure..." button. 
 
-![](/img/205/chrome1.png)
+![](img/205/chrome1.png)
 
 This will open a "DevTools" Window.
 
 When a debugging event happens (like an exception), you can inspect the code, variable values, call stack etc. just like when debugging JavaScript in a web-page in the Chrome browser DevTools.
 
-![](/img/205/chrome2.png)
+![](img/205/chrome2.png)
 
 TIP: Insert a "debugger" statement in your JavaScript code to force the debugger to pause execution.
 

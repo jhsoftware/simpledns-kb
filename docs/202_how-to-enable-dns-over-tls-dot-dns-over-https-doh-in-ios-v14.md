@@ -19,33 +19,33 @@ Note: It is important that you do this in the **Safari browser** as it may not w
 
 Enter you company name, select the protocol (DoT or DoH), enter you DNS server host name or query URL, and the DNS server IP addresses, click the Download button:
 
-![](/img/202/ipad1.png)
+![](img/202/ipad1.png)
 
 Safari will prompt you "This website is trying to download a configuration profile. Do you want to allow this?" - click "Allow":
 
-![](/img/202/ipad2.png)
+![](img/202/ipad2.png)
 
 Safari will prompt you "Profile downloaded". Click "Close":
 
-![](/img/202/ipad3.png)
+![](img/202/ipad3.png)
 
 From the home screen open the Settings app:
 
-![](/img/202/ipad4.png)
+![](img/202/ipad4.png)
 
 Click "Profile Downloaded":
 
-![](/img/202/ipad5.png)
+![](img/202/ipad5.png)
 
 In the "Install Profile" dialog, click "Install":
 
-![](/img/202/ipad6.png)
+![](img/202/ipad6.png)
 
 Enter your passcode and click "Done":
 
-![](/img/202/ipad7.png)
+![](img/202/ipad7.png)
 
 And in the final Warning dialog, click "Install":
 
-![](/img/202/ipad8.png)
+![](img/202/ipad8.png)
 

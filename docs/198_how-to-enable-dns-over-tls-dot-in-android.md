@@ -15,21 +15,21 @@ Note the following screen shots and instructions are taken from a Samsung Galaxy
 
 From your home screen, locate and click the Settings icon:
 
-![](/img/198/android1.png)
+![](img/198/android1.png)
 
 Click "Connections":
 
-![](/img/198/android2.png)
+![](img/198/android2.png)
 
 Scroll down and click "More connection settings":
 
-![](/img/198/android3.png)
+![](img/198/android3.png)
 
 Click "Private DNS":
 
-![](/img/198/android4.png)
+![](img/198/android4.png)
 
 Select "Private DNS provider hostname" and enter the host name of the DoT enabled DNS server:
 
-![](/img/198/android5.png)
+![](img/198/android5.png)
 

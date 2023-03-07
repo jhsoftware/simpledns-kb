@@ -22,20 +22,20 @@ New features / updates in v. 9.1:
 
 Write your own custom logic for DNS query processing in JavaScript. Your script code runs efficiently via Google's V8 JavaScript engine - the same that powers Chrome and Node.js.
 
-![](/img/203/js1.png)
+![](img/203/js1.png)
 
 The JavaScript code can be as simple or complex as needed - for example: 
 
-![](/img/203/js4.png)
+![](img/203/js4.png)
 
 
 The plug-in supports storing the JavaScript code in a separate file (optional), which lets you edit the code in the editor of your choice - for example Visual Studio Code to get JavaScript syntax highlighting etc.
 
-![](/img/203/js2.png)
+![](img/203/js2.png)
 
 The plug-in also supports connecting debuggers (such as Chrome DevTools) to debug your JavaScript code running in Simple DNS Plus live:
 
-![](/img/203/js3.png)
+![](img/203/js3.png)
 
 This plug-in is automatically installed with Simple DNS Plus v. 9.1.
 
@@ -56,7 +56,7 @@ Plug-ins included with the Simple DNS Plus installer are updated automatically, 
 
 It is now possible to have some plug-ins queried before local zones and other plug-ins queried after local zones (used to be either all plug-ins before or all plugs-ins after):
 
-![](/img/203/query-order.png)
+![](img/203/query-order.png)
 
 
 ### Miscellaneous updates{#misc}
