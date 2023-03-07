@@ -1,4 +1,4 @@
-﻿---
+---
 category: 2
 frontpage: false
 comments: true
