@@ -25,7 +25,7 @@ New features in v. 5.1:
 [Miscellaneous](#misc)  
 [New RFC and draft support](#rfc)
 
-<hr/>
+---
 
 ### Suspending Zones{#suspend}
 
@@ -57,7 +57,7 @@ And finally, the HTTP API has been extended with two new commands; "suspendzone"
 
 ![](img/103/7.png)
 
-<hr/>
+---
 
 ### Remote logging to syslog server{#syslog}
 
@@ -72,7 +72,7 @@ A nice choice for Windows is the "Kiwi Syslog Deamon" from [Kiwi Enterprises](ht
 
 ![](img/103/9.png)
 
-<hr/>
+---
 
 ### Response Filtering - Stops "DNS rebinding attacks"{#rfilter}
 
@@ -90,7 +90,7 @@ The log will show removed host records like this:
 
 ![](img/103/11.png)
 
-<hr/>
+---
 
 ### Stronger protection against DNS spoofing (cache poisoning) attacks{#spoofing}
 
@@ -102,7 +102,7 @@ Both of these features are based on the recommendations in a new Internet draft 
 
 ![](img/103/12.png)
 
-<hr/>
+---
 
 ### Choose events for Windows Event Log{#events}
 
@@ -113,7 +113,7 @@ It can also make it easier to use eventtriggers / Task Scheduler to process even
 
 ![](img/103/13.png)
 
-<hr/>
+---
 
 ### Import a list of domain names{#import}
 
@@ -129,7 +129,7 @@ And finally you can select which zones from the list you want to import:
 
 ![](img/103/16.png)
 
-<hr/>
+---
 
 ### Bulk update primary DNS server IP for secondary zones{#bulk}
 
@@ -139,7 +139,7 @@ Use this new option in the Bulk Update Wizard on your secondary servers when the
 
 ![](img/103/18.png)
 
-<hr/>
+---
 
 ### New and updated HTTP API commands{#httpapi}
 
@@ -155,7 +155,7 @@ This replaces the "listtype" parameter which still works but is now deprecated.
 - XML version of the "zonelist" command has new "suspended" attribute - see "Suspending Zones" above.
 - The "updatezone" command will no longer accept a "data" field without at least a valid SOA-record for primary zones (does not apply for secondary zones).
 
-<hr/>
+---
 
 ### Information bar for expired secondary zones{#expired}
 
@@ -164,7 +164,7 @@ This new information bar makes it easier to recognize this situation:
 
 ![](img/103/19.png)
 
-<hr/>
+---
 
 ### Export to standard boot file{#export}
 
@@ -176,7 +176,7 @@ However moving it to the Export Wizard makes it easier to find and adds options 
 
 ![](img/103/20.png)
 
-<hr/>
+---
 
 ### Automatic test of firewall EDNS0 support{#edns0}
 
@@ -190,7 +190,7 @@ If the test is negative, a warning will be logged (and written to the Windows Ev
 
 ![](img/103/22.png)
 
-<hr/>
+---
 
 ### Miscellaneous{#misc}
 
@@ -209,7 +209,7 @@ If the test is negative, a warning will be logged (and written to the Windows Ev
 - Zone group data moved to separate "_zonegroups.xml" file in data files directory (this data was part of "editrecs.config.xml" in v. 5.0)
 - New option "Query plug-ins before local zones (plug-in data overrides local zones)" in Options dialog / Plug-Ins section (added in v. 5.1 build 115).
 
-<hr/>
+---
 
 ### New RFC and draft support{#rfc}
 

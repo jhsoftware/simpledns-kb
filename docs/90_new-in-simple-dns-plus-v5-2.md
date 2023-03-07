@@ -24,7 +24,7 @@ New features in v. 5.2:
 [Miscellaneous updates / changes](#misc)  
 [New RFC and draft support](#rfc)
 
-<hr/>
+---
 
 ### Remote Management{#remote}
 
@@ -33,7 +33,7 @@ For details see [this news article](https://simpledns.plus/news/5).
 
 ![](img/90/1.png)
 
-<hr/>
+---
 
 ### Runs on Windows "Server Core"{#core}
 
@@ -42,7 +42,7 @@ For details see [this article](/kb/119/simple-dns-plus-on-windows-server-core).
 
 ![](img/90/2.png)
 
-<hr/>
+---
 
 ### DNSSEC{#dnssec}
 
@@ -50,7 +50,7 @@ Simple DNS Plus can now host DNSSEC signed zones and includes GUI tools for DNSS
 
 ![](img/90/3.png)
 
-<hr/>
+---
 
 ### Secure Zone Transfers (TSIG signed){#seczt}
 
@@ -60,7 +60,7 @@ For details see [this news article](https://simpledns.plus/news/6).
 
 ![](img/90/4.png)
 
-<hr/>
+---
 
 ### Check Internet Delegations wizard{#chkdel}
 
@@ -68,7 +68,7 @@ This new wizard lets you automatically test if the NS and SOA records in your lo
 
 ![](img/90/5.png)
 
-<hr/>
+---
 
 ### Windows Performance Counters{#perfctr}
 
@@ -76,7 +76,7 @@ Simple DNS Plus now supplies 9 different performance counters which can be graph
 
 ![](img/90/6.png)
 
-<hr/>
+---
 
 ### High performance, multi-threaded plug-in processing{#mtpi}
 
@@ -87,7 +87,7 @@ We have also added the option for plug-ins to process multiple DNS requests in p
 
 Multi threading is currently available in the [MS SQL Server](https://simpledns.plus/plugin-mssql), [MS SQL Server Plus](https://simpledns.plus/plugin-mssqlplus), and the [MySQL Server](https://simpledns.plus/plugin-mysql) plug-ins, and is of course also available for implementation by 3rd party plug-in developers.
 
-<hr/>
+---
 
 ### DNS request "rules" for plug-ins{#rules}
 
@@ -98,7 +98,7 @@ Plug-ins can provide custom "rules" for other plug-ins. For example; you can set
 
 More details are available in [this article](/kb/110/plug-ins-in-simple-dns-plus).
 
-<hr/>
+---
 
 ### Enhanced DNS Look Up tool{#lookup}
 
@@ -106,7 +106,7 @@ New options pane docked in main window for quick and easy access, separate DNS a
 
 ![](img/90/9.png)
 
-<hr/>
+---
 
 ### New standard plug-ins{#stdpi}
 
@@ -119,7 +119,7 @@ Returns a fixed host name - either as a CNAME record for all requests, or as MX/
 - New "Ignore DNS Request" plug-in.  
 Instructs Simple DNS Plus to ignore (not answer) specified DNS requests. [More details...](https://simpledns.plus/plugin-ignorereq)
 
-<hr/>
+---
 
 ### Miscellaneous updates / changes{#misc}
 
@@ -145,7 +145,7 @@ Instructs Simple DNS Plus to ignore (not answer) specified DNS requests. [More d
 - Added new free educational license type. [Details](/kb/48/free-educational-licenses) (build 132).  
   
 
-<hr/>
+---
 
 ### New RFC and draft support{#RFC}
 
