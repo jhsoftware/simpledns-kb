@@ -46,7 +46,7 @@ By default all DNS requests are processed by the plug-in, but if the plug-in doe
 
 You can set "Process DNS requests" to either "Always", "Never", or "Only when...".\
 With the "Only when..." option, you can configure a list of "rules" which determine what DNS requests are process or not.\
-Available "rules" are:</p>
+Available "rules" are:
 
 - Sender's IP address
 	- is a specific IP address
