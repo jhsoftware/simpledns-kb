@@ -71,7 +71,7 @@ For an example of using this for blocking DNS requests from specific countries, 
 
 As there is no standard for this, we developed our own data file format (`.geodns` files) - designed to be compact and fast to read into memory in a single pass (the whole database is kept in memory rather than randomly accessing the file).
 
-For file layout specifics see https://github.com/jhsoftware/sdnspi-GeoDNS/blob/master/data-file-format.md
+For file layout specifics see <https://github.com/jhsoftware/sdnspi-GeoDNS/blob/master/data-file-format.md>
 
 Several companies / web-sites provide IP-to-Country databases - both paid and free.
 
