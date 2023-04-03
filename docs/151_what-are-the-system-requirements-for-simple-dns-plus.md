@@ -27,9 +27,9 @@ Any edition of:
 - Windows Server 2019
 - Windows Server 2022
 
-Both 32 bit and 64 bit Windows versions are fully supported.\
-"Windows Server Core" is also supported - [details](/kb/119/simple-dns-plus-on-windows-server-core).\
-"Windows Embedded 7" is also supported - [details](/kb/118/simple-dns-plus-on-windows-embedded-standard-7).
+<p>Both 32 bit and 64 bit Windows versions are fully supported.<br/>
+"Windows Server Core" is also supported - <a href="/kb/119/simple-dns-plus-on-windows-server-core">details</a>.<br/>
+"Windows Embedded 7" is also supported - <a href="/kb/118/simple-dns-plus-on-windows-embedded-standard-7">details</a>.</p>
 			</td>
 		</tr>
 		<tr bgcolor="#c0d0e0">
