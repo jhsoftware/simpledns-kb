@@ -1,6 +1,6 @@
 ﻿# Simple DNS Plus knowledge base
 
-The documentation contained in this repository is hosted at <https://support.simpledns.plus/kb>
+The documentation contained in this repository is hosted at <https://kb.simpledns.plus>
 
 ## Contributions
 
