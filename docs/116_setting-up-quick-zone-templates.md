@@ -81,91 +81,89 @@ You can add as many input fields as you need (above a certain number the dialog 
 
 For each input field (&lt;INPUT&gt; element) you must specify a "type" attribute, which controls what style of input control is used and what type of variable the entered data is returned as:
 
-<table style="background-color: #f0f0ff; border-collapse: collapse;" border="1" bordercolor="black" cellpadding="2">
-    <tbody>
-        <tr>
-            <th>type value</th>
-            <th>Variable type</th>
-            <th>Other attributes</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>IPV4</td>
-            <td>String</td>
-            <td>id, title, value, required</td>
-            <td>An IP address entry box with a lookup button</td>
-        </tr>
-        <tr>
-            <td>IPV6</td>
-            <td>String</td>
-            <td>id, title, value, required</td>
-            <td>An IPv6 address entry box</td>
-        </tr>
-        <tr>
-            <td>DOMAIN</td>
-            <td>String</td>
-            <td>id, title, value, required</td>
-            <td>A domain name entry box</td>
-        </tr>
-        <tr>
-            <td>TEXT</td>
-            <td>String</td>
-            <td>id, title, value, required</td>
-            <td>A input box which accepts any entry</td>
-        </tr>
-        <tr>
-            <td>TTL</td>
-            <td>Integer</td>
-            <td>id, title, value</td>
-            <td>A TTL (time to live) entry control</td>
-        </tr>
-        <tr>
-            <td>CHECK</td>
-            <td>Boolean</td>
-            <td>id, title, checked</td>
-            <td>A check box</td>
-        </tr>
-        <tr>
-            <td>SELECT</td>
-            <td>String</td>
-            <td>id, title, required</td>
-            <td>A drop-down selection control</td>
-        </tr>
-    </tbody>
+<table style="table-layout:auto">
+    <tr>
+        <th>type value</th>
+        <th>Variable type</th>
+        <th>Other attributes</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>IPV4</td>
+        <td>String</td>
+        <td>id, title, value, required</td>
+        <td>An IP address entry box with a lookup button</td>
+    </tr>
+    <tr>
+        <td>IPV6</td>
+        <td>String</td>
+        <td>id, title, value, required</td>
+        <td>An IPv6 address entry box</td>
+    </tr>
+    <tr>
+        <td>DOMAIN</td>
+        <td>String</td>
+        <td>id, title, value, required</td>
+        <td>A domain name entry box</td>
+    </tr>
+    <tr>
+        <td>TEXT</td>
+        <td>String</td>
+        <td>id, title, value, required</td>
+        <td>A input box which accepts any entry</td>
+    </tr>
+    <tr>
+        <td>TTL</td>
+        <td>Integer</td>
+        <td>id, title, value</td>
+        <td>A TTL (time to live) entry control</td>
+    </tr>
+    <tr>
+        <td>CHECK</td>
+        <td>Boolean</td>
+        <td>id, title, checked</td>
+        <td>A check box</td>
+    </tr>
+    <tr>
+        <td>SELECT</td>
+        <td>String</td>
+        <td>id, title, required</td>
+        <td>A drop-down selection control</td>
+    </tr>
 </table>
+
 IMPORTANT: To ensure proper formatting in the zone file, make sure to use the correct type rather than just using TEXT for everything.  
 For example the DOMAIN type automatically punycodes IDN domain names, adds a trailing dot, etc. which doesn't happen with the TEXT type.
 
 Other &lt;INPUT&gt; element attributes:
 
-<table style="background-color: #f0f0ff; border-collapse: collapse;" border="1" bordercolor="black" cellpadding="2">
-    <tbody>
-        <tr>
-            <th>Attribute</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>id</td>
-            <td>Unique name of the variable that the entered data is returned in (required)</td>
-        </tr>
-        <tr>
-            <td>title</td>
-            <td>Lead text for the input field (required)</td>
-        </tr>
-        <tr>
-            <td>value</td>
-            <td>Default value</td>
-        </tr>
-        <tr>
-            <td>required</td>
-            <td>"true" or "false" indicating if data entry is required (defaults to "true")</td>
-        </tr>
-        <tr>
-            <td>checked</td>
-            <td>"true" or "false" indicating if the checkbox is checked (defaults to "false") </td>
-        </tr>
-    </tbody>
+<table style="table-layout:auto">
+    <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>id</td>
+        <td>Unique name of the variable that the entered data is returned in (required)</td>
+    </tr>
+    <tr>
+        <td>title</td>
+        <td>Lead text for the input field (required)</td>
+    </tr>
+    <tr>
+        <td>value</td>
+        <td>Default value</td>
+    </tr>
+    <tr>
+        <td>required</td>
+        <td>"true" or "false" indicating if data entry is required (defaults to "true")</td>
+    </tr>
+    <tr>
+        <td>checked</td>
+        <td>"true" or "false" indicating if the checkbox is checked (defaults to "false") </td>
+    </tr>
 </table>
+
 "SELECT" type Input fields must have &lt;OPTION&gt; sub-elements. Each of these elements contains the text value of a selection. One of the &lt;OPTION&gt; elements may have a *selected="true"* attribute to specify the default selection.
 
 ### Adding program code
@@ -192,80 +190,79 @@ No, simply leave it to Simple DNS Plus to ask for the IP address and add an A-re
 
 2) A number of pre-set ReadOnly variables are available for use in your code:
 
-<table style="background-color: #f0f0ff; border-collapse: collapse;" border="1" bordercolor="black" cellpadding="2">
-    <tbody>
-        <tr>
-            <th>Variable name</th>
-            <th>Type</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>ServerName</td>
-            <td>String</td>
-            <td>The name of this DNS server in zone file format</td>
-        </tr>
-        <tr>
-            <td>AdminEmail</td>
-            <td>String</td>
-            <td>The admin e-mail address of this DNS server in zone file domain name format</td>
-        </tr>
-        <tr>
-            <td>defSOASerial</td>
-            <td>Integer</td>
-            <td>The default SOA-record serial number (see "Default Zone Values" dialog)</td>
-        </tr>
-        <tr>
-            <td>defSOARefresh</td>
-            <td>Integer</td>
-            <td>The default SOA-record Refresh interval (see "Default Zone Values" dialog)</td>
-        </tr>
-        <tr>
-            <td>defSOARetry</td>
-            <td>Integer</td>
-            <td>The default SOA-record Retry interval (see "Default Zone Values" dialog)</td>
-        </tr>
-        <tr>
-            <td>defSOAExpire</td>
-            <td>Integer</td>
-            <td>The default SOA-record Expire time (see "Default Zone Values" dialog) </td>
-        </tr>
-        <tr>
-            <td>defSOAMinimum</td>
-            <td>Integer</td>
-            <td>The default SOA-record Minimum TTL (see "Default Zone Values" dialog)</td>
-        </tr>
-        <tr>
-            <td>defNS2Servers</td>
-            <td>String()</td>
-            <td>The default secondary DNS servers (see "Default Zone Values" dialog) </td>
-        </tr>
-        <tr>
-            <td>defAllowZT</td>
-            <td>String</td>
-            <td>The default allowed zone transfer IPs (see "Default Zone Values" dialog) </td>
-        </tr>
-        <tr>
-            <td>defNotifyNS</td>
-            <td>Boolean</td>
-            <td>Notify DNS servers in zone level NS-records (added in v. 5.2 build 119).</td>
-        </tr>
-        <tr>
-            <td>defAlsoNotify</td>
-            <td>String</td>
-            <td>Additional DNS server IP addresses to notify (added in v. 5.2 build 119).</td>
-        </tr>
-        <tr>
-            <td>defDefaultTTL</td>
-            <td>Integer</td>
-            <td>The default "Defaut TTL" (see "Default Zone Values" dialog) </td>
-        </tr>
-        <tr>
-            <td>ZoneName</td>
-            <td>String</td>
-            <td>The name of the zone being created in zone file format.</td>
-        </tr>
-    </tbody>
+<table style="table-layout:auto">
+    <tr>
+        <th>Variable name</th>
+        <th>Type</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>ServerName</td>
+        <td>String</td>
+        <td>The name of this DNS server in zone file format</td>
+    </tr>
+    <tr>
+        <td>AdminEmail</td>
+        <td>String</td>
+        <td>The admin e-mail address of this DNS server in zone file domain name format</td>
+    </tr>
+    <tr>
+        <td>defSOASerial</td>
+        <td>Integer</td>
+        <td>The default SOA-record serial number (see "Default Zone Values" dialog)</td>
+    </tr>
+    <tr>
+        <td>defSOARefresh</td>
+        <td>Integer</td>
+        <td>The default SOA-record Refresh interval (see "Default Zone Values" dialog)</td>
+    </tr>
+    <tr>
+        <td>defSOARetry</td>
+        <td>Integer</td>
+        <td>The default SOA-record Retry interval (see "Default Zone Values" dialog)</td>
+    </tr>
+    <tr>
+        <td>defSOAExpire</td>
+        <td>Integer</td>
+        <td>The default SOA-record Expire time (see "Default Zone Values" dialog) </td>
+    </tr>
+    <tr>
+        <td>defSOAMinimum</td>
+        <td>Integer</td>
+        <td>The default SOA-record Minimum TTL (see "Default Zone Values" dialog)</td>
+    </tr>
+    <tr>
+        <td>defNS2Servers</td>
+        <td>String()</td>
+        <td>The default secondary DNS servers (see "Default Zone Values" dialog) </td>
+    </tr>
+    <tr>
+        <td>defAllowZT</td>
+        <td>String</td>
+        <td>The default allowed zone transfer IPs (see "Default Zone Values" dialog) </td>
+    </tr>
+    <tr>
+        <td>defNotifyNS</td>
+        <td>Boolean</td>
+        <td>Notify DNS servers in zone level NS-records (added in v. 5.2 build 119).</td>
+    </tr>
+    <tr>
+        <td>defAlsoNotify</td>
+        <td>String</td>
+        <td>Additional DNS server IP addresses to notify (added in v. 5.2 build 119).</td>
+    </tr>
+    <tr>
+        <td>defDefaultTTL</td>
+        <td>Integer</td>
+        <td>The default "Defaut TTL" (see "Default Zone Values" dialog) </td>
+    </tr>
+    <tr>
+        <td>ZoneName</td>
+        <td>String</td>
+        <td>The name of the zone being created in zone file format.</td>
+    </tr>
 </table>
+
 3) If you find that your template generates more of the zone file dynamically than what is static, you may want to write out the whole zone file or parts of it through code by appending text to the "ZoneFile" StringBuilder object (similar to "Response.Write" in ASP). For example:
 
 `ZoneFile.AppendLine("@ A 1.2.3.4")`

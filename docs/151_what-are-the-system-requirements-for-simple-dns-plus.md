@@ -8,10 +8,9 @@ modified-utc: 2021-09-08
 ---
 # What are the system requirements for Simple DNS Plus?
 
-<table cellpadding="5" cellspacing="2">
-	<tbody>
-		<tr bgcolor="#e0f0ff">
-			<td style="white-space: nowrap;" valign="top">Operating system:</td>
+<table style="table-layout:auto">
+		<tr>
+			<td style="white-space: nowrap;vertical-align:top">Operating system:</td>
 			<td>
 Any edition of:
 
@@ -32,32 +31,31 @@ Any edition of:
 "Windows Embedded 7" is also supported - <a href="/kb/118/simple-dns-plus-on-windows-embedded-standard-7">details</a>.</p>
 			</td>
 		</tr>
-		<tr bgcolor="#c0d0e0">
-			<td style="white-space: nowrap;" valign="top">Software:</td>
+		<tr>
+			<td style="white-space: nowrap;vertical-align:top">Software:</td>
 			<td>Microsoft .NET Framework 4.8<br />
 			(automatically downloaded and installed if missing)</td>
 		</tr>
-		<tr bgcolor="#e0f0ff">
-			<td style="white-space: nowrap;" valign="top">Processor (CPU):</td>
+		<tr>
+			<td style="white-space: nowrap;vertical-align:top">Processor (CPU):</td>
 			<td>1 GHz or better.</td>
 		</tr>
-		<tr bgcolor="#c0d0e0">
-			<td style="white-space: nowrap;" valign="top">Memory (RAM):</td>
+		<tr>
+			<td style="white-space: nowrap;vertical-align:top">Memory (RAM):</td>
 			<td>64 MB + Windows and .NET Framework requirements.</td>
 		</tr>
-		<tr bgcolor="#e0f0ff">
-			<td style="white-space: nowrap;" valign="top">Hard disk space:</td>
+		<tr>
+			<td style="white-space: nowrap;vertical-align:top">Hard disk space:</td>
 			<td>10 MB + Windows and .NET Framework requirements.</td>
 		</tr>
-		<tr bgcolor="#c0d0e0">
-			<td style="white-space: nowrap;" valign="top">Network:</td>
+		<tr>
+			<td style="white-space: nowrap;vertical-align:top">Network:</td>
 			<td>Any type of TCP/IP (IPv4 or IPv6) connection.</td>
 		</tr>
-		<tr bgcolor="#e0f0ff">
-			<td style="white-space: nowrap;" valign="top">Internet IP address:</td>
+		<tr>
+			<td style="white-space: nowrap;vertical-align:top">Internet IP address:</td>
 			<td>You need a static (*) Internet IP address only if you want to use Simple DNS Plus for hosting domain names on the Internet. A dynamic IP address can be used for a resolving and caching Internet domain names.</td>
 		</tr>
-	</tbody>
 </table>
 
 (*) By "static" we mean an IP address which does not change, or only very seldom changes.\
