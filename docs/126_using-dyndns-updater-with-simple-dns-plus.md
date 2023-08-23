@@ -42,10 +42,43 @@ Create a new text file (for example using Notepad) with the following contents a
 
 For use with the DynDNS Service plug-in:
 
-<pre></pre>
+<pre>
+[default]
+withpass=1
+host=dyndns.example.com
+port=80
+path=/ddns
+protocol=http
+
+[requests]
+ip=%IP%
+
+[result]
+multilines=0
+success=OK
+warning=FAIL
+</pre>
+
 For use with the HTTP API directly:
 
-<pre></pre>
+<pre>
+[default]
+withpass=1
+host=ns1.example.com
+port=8053
+path=/updatehost
+protocol=http
+
+[requests]
+host=%HOST%
+data=%IP%
+
+[result]
+multilines=0
+success=OK
+warning=ERROR
+</pre>
+
 Change the "host" setting to match the host name or IP address of the computer running Simple DNS Plus.
 
 Now run DynDNS Updater again, and once again click the "Cancel" button in the "DynDNS Updater Wizard" dialog:

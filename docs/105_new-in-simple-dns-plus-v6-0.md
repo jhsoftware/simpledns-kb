@@ -102,11 +102,17 @@ You may need to update any programs/scripts using the command line to add/update
 
 Simple DNS Plus has since early versions included a command line option to add/update a DNS zone:
 
-<pre></pre>
+<pre>
+SDNSPLUS -z  z:&lt;zone-name&gt; [f:&lt;file-name&gt;] [p:&lt;primary-ip&gt;] [g:&lt;group-id&gt;]
+</pre>
+
 In previous versions the zone file would be read from the directory specified in the Options dialog / DNS / Local Zones / Data Files section, but that settings is gone in v. 6.0 (because Simple DNS Plus now stores all DNS zones in a database instead of individual files).  
 Therefore, for v. 6.0, we have updated the program so that you can now specify a full path in the f: parameter. For example:
 
-<pre></pre>
+<pre>
+SDNSPLUS -z  z:example.com &quot;f:C:\my zone files\example.com.dns&quot;
+</pre>
+
 If you do NOT specify a full path in the f: parameter, Simple DNS Plus v. 6.0 will try to load the zone file from a "ZoneFiles" directory under the application data directory (typically "c:\ProgramData\JH Software\Simple DNS Plus") - the default location for zone files in previous versions.
 
 Note: This applies to primary zones only, as the f: parameter is not needed when adding/updating a secondary zone.

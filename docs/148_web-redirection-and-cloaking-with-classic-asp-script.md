@@ -28,7 +28,17 @@ First create a DNS A-records for the domain name pointing to the IIS/PWS web-ser
 
 Then create a "default.asp" page on this web-server with the following contents:
 
-<pre></pre>
+<pre>
+&lt;%<br />
+Select Case Request.ServerVariables("HTTP_HOST")
+Case "myname.com", "www.myname.com"
+&nbsp; Response.Redirect "http://www.ispname/~myname"
+Case "othername.com", "www.othername.com" 
+&nbsp; Response.Redirect "http://www.ispname/~othername"
+End Select
+%&gt;
+</pre>
+
 Add "case" statements for each domain name you want to redirect.  
 You can automate this further with a database containing each domain name and corresponding redirect destination.
 
@@ -37,4 +47,19 @@ On IIS you can also point 404 errors (page not found) to this ASP page so reques
 Another variant of this is called "cloaking" - where your domain name still shows in the browser's address bar even after the redirection.  
 This is achieved by "hiding" the redirection in a frame-set where the first frame is zero width or height:
 
-<pre></pre>
+<pre>
+&lt;%
+Select Case Request.ServerVariables("HTTP_HOST")
+Case "myname.com", "www.myname.com"
+&nbsp; destURL = "http://www.ispname/~myname"
+Case "othername.com", "www.othername.com"
+&nbsp; destURL = "http://www.ispname/~othername"
+End Select
+%&gt;
+&lt;html&gt;
+&nbsp; &lt;frameset cols="0,*" framespacing="0" border="0" frameborder="0"&gt;
+&nbsp;&nbsp;&nbsp; &lt;frame name="zero" scrolling="no" noresize&gt;
+&nbsp;&nbsp;&nbsp; &lt;frame name="main" src="&lt;%=destURL%&gt;"&gt;
+&nbsp; &lt;/frameset&gt; 
+&lt;/html&gt;
+</pre>

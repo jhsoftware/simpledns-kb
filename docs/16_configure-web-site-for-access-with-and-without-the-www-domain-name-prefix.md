@@ -28,4 +28,10 @@ Add an identity entry for each version of the domain name (with and without the 
 
 In Apache you need to put one version of the domain name in the "ServerName" setting and the other in the "ServerAlias" setting in the configuration file:
 
-<pre></pre>
+<pre>
+&lt;VirtualHost *&gt;
+ServerName simpledns.plus
+ServerAlias www.simpledns.plus
+# ...
+&lt;/VirtualHost&gt;
+</pre>

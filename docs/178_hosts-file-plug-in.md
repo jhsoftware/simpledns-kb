@@ -22,6 +22,7 @@ You can use multiple hosts files by setting up multiple "Hosts File" plug-in ins
 
 Host file line example:
 
-<pre></pre>
+<pre>1.2.3.4 example.com</pre>
+
 Defines an A-Record (example.com -&gt; 1.2.3.4) and a PTR-record (4.3.2.1.in-addr.arpa -&gt; example.com).
 

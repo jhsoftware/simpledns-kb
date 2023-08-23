@@ -20,10 +20,37 @@ When Simple DNS Plus v. 5.0 receives such a "Format Error" in response to an EDN
 
 As you can see in the following log snapshot from Simple DNS Plus v. 5.0, it first sends a DNS request to the Akamai DNS server (use3.akadns.net) and gets a "Format Error" response. Then it sends the DNS request again (without EDNS0) and gets a good (no error) response:
 
-<pre></pre>
+<pre>
+13:49:01   Request from 127.0.0.1 for A-record for www.yahoo.com
+...
+13:49:02   Sending request to 204.2.178.133 (use3.<span  style="background-color:yellow">akadns.net</span>) for A-record for www.yahoo-ht3.akadns.net
+13:49:02   Reply from 204.2.178.133:
+13:49:02   <span  style="background-color:yellow">-&gt; Header: Format Error</span>
+13:49:02   Sending request to 204.2.178.133 (use3.akadns.net) for A-record for www.yahoo-ht3.akadns.net
+13:49:02   Reply from 204.2.178.133 about A-record for www.yahoo-ht3.akadns.net:
+13:49:02   -&gt; Answer: A-record for www.yahoo-ht3.akadns.net = 87.248.113.14
+13:49:02   Sending reply to 127.0.0.1 about A-record for www.yahoo.com:
+13:49:02   -&gt; Answer: CNAME-record for www.yahoo.com = www.yahoo-ht3.akadns.net
+13:49:02   -&gt; Answer: A-record for www.yahoo-ht3.akadns.net = 87.248.113.14
+</pre>
+
 To make it a bit clearer to see what is happening, you can enable logging of EDNS0 details (see Options dialog / Logging / Log Details section). Then it looks like this:
 
-<pre></pre>
+<pre>
+13:49:01   Request from 127.0.0.1 for A-record for www.yahoo.com
+...
+13:49:02   Sending request to 204.2.178.133 (use3.akadns.net) for A-record for www.yahoo-ht3.akadns.net
+13:49:02   <span style="background-color:yellow">-&gt; EDNS0: UDP payload size = 1280 bytes</span>
+13:49:02   Reply from 204.2.178.133:
+13:49:02   -&gt; Header: Format Error
+13:49:02   Sending request to 204.2.178.133 (use3.akadns.net) for A-record for www.yahoo-ht3.akadns.net
+13:49:02   Reply from 204.2.178.133 about A-record for www.yahoo-ht3.akadns.net:
+13:49:02   -&gt; Answer: A-record for www.yahoo-ht3.akadns.net = 87.248.113.14
+13:49:02   Sending reply to 127.0.0.1 about A-record for www.yahoo.com:
+13:49:02   -&gt; Answer: CNAME-record for www.yahoo.com = www.yahoo-ht3.akadns.net
+13:49:02   -&gt; Answer: A-record for www.yahoo-ht3.akadns.net = 87.248.113.14
+</pre>
+
 While this does result in an extra round-trip when resolving certain domain names (such as yahoo.com), we recommend leaving EDNS0 enabled because this is generally more efficient both in resolving and serving DNS requests.
 
 We are sure that Akamai will fix their DNS servers eventually as this is only causing unnecessary DNS traffic for themselves and delays for users of their customers' web-sites.
