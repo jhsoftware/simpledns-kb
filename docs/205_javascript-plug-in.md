@@ -21,7 +21,7 @@ Executes a custom JavaScript function to look up the host name for an IP address
 Executes a custom JavaScript function look up a TXT-record value for a host name.
 - **Answer lookup**\
 Executes a custom JavaScript function to do a DNS lookup returning multiple DNS records and/or special response properties (AA flag / RCode value).\
-**NOTE:** The "Answer lookup" variation requires an **Unlimited Zones license** for Simple DNS Plus.
+**IMPORTANT:** The "Answer lookup" variant requires an **Unlimited Zones license** for Simple DNS Plus.
 
 ### User interface
 

@@ -22,7 +22,10 @@ The plug-in is pre-configured with a default set of 10 regions (North America, M
 
 There are two variants of the plug-in - "CNAME" and "Clone" - both included in the same .dll file.
 The "CNAME" variant responds with a server name alias (CNAME-record).
-The "Clone" variant responds with one or more cloned host records (A/AAAA records).
+The "Clone" variant responds with one or more cloned host records (A/AAAA records).  
+
+**IMPORTANT:** The "Clone" plug-in variant requires an **Unlimited Zones license** for Simple DNS Plus.  
+(the "CNAME" variant works with any license size)
 
 The host name pointed to by this CNAME-record - or the cloned host records - may represent multiple IP addresses (multiple A/AAAA-records) defined elsewhere - for example a local or remote DNS zone or by another plug-in. 
 
