@@ -23,6 +23,10 @@ To create your own plug-in for Simple DNS Plus, create a .NET 4.8 library (.dll 
 - **JHSoftware.SimpleDNS.Plugin.ILookupTXT**\
 	For plug-ins designed to fetch a single TXT record for a host name.
 
+- **JHSoftware.SimpleDNS.Plugin.ILookupRecord**\
+	For plug-ins designed to fetch a single DNS record of any type.\
+	(New from Simple DNS Plus v. 9.1.115)
+
 - **JHSoftware.SimpleDNS.Plugin.ILookupAnswer**\
 	For plug-ins designed to fetch multiple DNS records of any type.\
 	NOTE: Plug-ins based on this interface only work with the "Unlimited zones" license type.
