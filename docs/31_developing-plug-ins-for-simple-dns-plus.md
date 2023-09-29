@@ -4,7 +4,7 @@ frontpage: false
 comments: true
 refs: 85,110
 created-utc: 2019-01-01
-modified-utc: 2021-10-28
+modified-utc: 2023-09-29
 ---
 # Developing plug-ins for Simple DNS Plus
 
