@@ -16,7 +16,7 @@ For more details on this concept and its history, please see
 
 ### Screen Shot
 
-![DNS Blacklist Editor - screen shot](/docs/img/208/dnsbleditor.png)
+![DNS Blacklist Editor - screen shot](img/208/dnsbleditor.png)
 
 ### Features
 
@@ -57,13 +57,13 @@ Or compile from the command line (or as part of a script) by executing
 
 ### Download
 
-![download](/docs/img/208/todisk.gif)
+![download](img/208/todisk.gif)
 Version 1.0 build 4 (May 18th 2009): [dnsbledit.exe (74 KB)](https://simpledns.plus/outbox/dnsbledit.exe)
 
 ### System Requirements
 
 - Windows 98 / 2000 or later
-- Microsoft .NET Framework 2.0 or later
+- Microsoft .NET Framework 2.0 - 3.5
 
 ### Licensing
 
