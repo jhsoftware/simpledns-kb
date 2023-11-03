@@ -16,7 +16,7 @@ Previous versions of Simple DNS Plus do the later.
 
 However a few Internet DNS servers, including those currently used by Akamai, will respond with "Format Error" to all EDNS0 request (Akamai is a DNS service provider used by Yahoo! and several other large web-sites).
 
-When Simple DNS Plus v. 5.0 receives such a "Format Error" in response to an EDNS0 request, it will simply re-send the request without EDNS0 (a standard RFC behaviour used by all EDNS0 enabled DNS servers).
+When Simple DNS Plus v. 5.0 receives such a "Format Error" in response to an EDNS0 request, it will simply re-send the request without EDNS0 (a standard RFC behavior used by all EDNS0 enabled DNS servers).
 
 As you can see in the following log snapshot from Simple DNS Plus v. 5.0, it first sends a DNS request to the Akamai DNS server (use3.akadns.net) and gets a "Format Error" response. Then it sends the DNS request again (without EDNS0) and gets a good (no error) response:
 

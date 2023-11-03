@@ -3,12 +3,12 @@ category: 1
 frontpage: false
 comments: true
 vgroup: 4
-vname: v.4.00 and earlier
+vname: v. 4.00 and earlier
 vsort: 3
 created-utc: 2019-01-01
 modified-utc: 2019-01-01
 ---
-# How do I backup and restore Simple DNS Plus settings and data? (v.4.00 and earlier)
+# How do I backup and restore Simple DNS Plus settings and data? (v. 4.00 and earlier)
 
 The different settings (Options dialog etc.) are recorded in various ".ini" files in the directory where Simple DNS Plus is installed.
 

@@ -3,12 +3,12 @@ category: 1
 frontpage: false
 comments: true
 vgroup: 4
-vname: v.6.0 and later
+vname: v. 6.0 and later
 vsort: 1
 created-utc: 2019-01-01
 modified-utc: 2021-10-07
 ---
-# How do I backup and restore Simple DNS Plus settings and data? (v.6.0 and later)
+# How do I backup and restore Simple DNS Plus settings and data? (v. 6.0 and later)
 
 ### Which files to backup 
 

@@ -13,6 +13,11 @@ modified-utc: 2019-01-01
 Simple DNS Plus can be prompted through HTTP to perform various actions - either with a browser or from any program/script which can communicate through HTTP.  
 It is also possible to manipulate DNS zone and record data this way. For details, see [How to use HTTP commands](https://simpledns.plus/helplink?p=ht_http) in the Simple DNS Plus help file and [this article](/kb/115/sending-simple-dns-plus-http-commands).
 
+### JavaScript plug-in
+
+With the [JavaScript plug-in](/plugin-javascript), you can write your own custom logic for DNS query processing in JavaScript.
+
+
 ### Open plug-in architecture
 
 We welcome users and 3rd parties to develop plug-ins for Simple DNS Plus.  

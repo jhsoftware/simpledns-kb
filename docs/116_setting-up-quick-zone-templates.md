@@ -81,7 +81,7 @@ You can add as many input fields as you need (above a certain number the dialog 
 
 For each input field (&lt;INPUT&gt; element) you must specify a "type" attribute, which controls what style of input control is used and what type of variable the entered data is returned as:
 
-<table style="table-layout:auto">
+<table class="data">
     <tr>
         <th>type value</th>
         <th>Variable type</th>
@@ -137,7 +137,7 @@ For example the DOMAIN type automatically punycodes IDN domain names, adds a tra
 
 Other &lt;INPUT&gt; element attributes:
 
-<table style="table-layout:auto">
+<table class="data">
     <tr>
         <th>Attribute</th>
         <th>Description</th>
@@ -190,7 +190,7 @@ No, simply leave it to Simple DNS Plus to ask for the IP address and add an A-re
 
 2) A number of pre-set ReadOnly variables are available for use in your code:
 
-<table style="table-layout:auto">
+<table class="data">
     <tr>
         <th>Variable name</th>
         <th>Type</th>

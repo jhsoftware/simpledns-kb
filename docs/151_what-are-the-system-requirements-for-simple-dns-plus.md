@@ -8,7 +8,7 @@ modified-utc: 2021-09-08
 ---
 # What are the system requirements for Simple DNS Plus?
 
-<table style="table-layout:auto">
+<table class="data">
 		<tr>
 			<td style="white-space: nowrap;vertical-align:top">Operating system:</td>
 			<td>
