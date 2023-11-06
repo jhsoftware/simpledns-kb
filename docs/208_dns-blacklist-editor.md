@@ -42,7 +42,7 @@ The QuickSort algorithm is used for sorting, so this is blazing fast even with m
 - **Merging**
 One step function to merge all neighboring/overlapping entries with identical return values (A/TXT).  
 This can reduce the size of some blacklists very dramatically.  
-*Not possible with generic text editor</i>*.
+*Not possible with generic text editor*.
 
 - **Low memory usage**  
 DNS blacklists often contain thousands of entries with identical TXT-record return values.  

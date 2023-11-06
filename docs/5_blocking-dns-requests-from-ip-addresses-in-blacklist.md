@@ -15,7 +15,7 @@ Note that Simple DNS Plus has a built-in feature to ignore DNS requests from spe
 You can also use the Ignore DNS Request plug-in by itself - specifying the IP addresses in the DNS Requests tab.  
 However, the following may be easier to use and/or more efficient if you have a really long list of IP addresses, or if you want to automate this in some way.  
 
-First you need to create (or download) a list of IP addresses that you want to block, and then "compile" this into the format understood by the DNS Blacklist plug-in using the [DNS Blacklist Editor](https://simpledns.plus/dnsbl-editor) tool (can also be used from command line / batch scripts for automation).  
+First you need to create (or download) a list of IP addresses that you want to block, and then "compile" this into the format understood by the DNS Blacklist plug-in using the [DNS Blacklist Editor](/kb/208) tool (can also be used from command line / batch scripts for automation).  
 
 Next [download](https://simpledns.plus/plugins) the DNS Blacklist plug-in and unzip this to the plug-ins folder. The Ignore DNS request plug-in comes with Simple DNS Plus, so you don't need to prepare anything for this.  
 

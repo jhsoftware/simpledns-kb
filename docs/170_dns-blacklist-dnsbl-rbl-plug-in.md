@@ -23,7 +23,7 @@ Theoretically a DNS blacklist can be hosted as a normal DNS zone with A-records 
 However a DNS blacklist typically contains thousands and often millions of IP addresses, and the standard DNS zone file format and the normal way of storing DNS records in computer memory is just not efficient for this type of data.  
 This plug-in however is highly optimized for this, and can load a dataset for millions of IP addresses in a fraction of a second using minimal memory, and can query this data extremely efficiently.
 
-You can create your own blacklists with the [DNS Blacklist Editor](https://simpledns.plus/dnsbl-editor) tool.  
+You can create your own blacklists with the [DNS Blacklist Editor](/kb/208) tool.  
 If you receive a lot of e-mails and do a lot of DNS blacklist lookups against other blacklists (for example as an ISP), it may also be more efficient to periodically download the full blacklists and host them yourself with this plug-in.
 
 In the plug-in instance dialog / Plug-In Settings tab you can specify the blacklist domain name, the compiled data file, select if the data file should automatically be re-loaded when updated, and the TTL value for responses:
@@ -32,7 +32,7 @@ In the plug-in instance dialog / Plug-In Settings tab you can specify the blackl
 
 **<u>IMPORTANT</u>**:  
 The "Compiled data file" is highly optimized proprietary binary file type (".sdnsbl" file extension) which is only understood by this plug-in. This should NOT be confused with standard text based DNSBL/RBL files.  
-You compile this file type from a DNSBL/RBL text file using the [DNS Blacklist Editor](https://simpledns.plus/dnsbl-editor) tool.  
+You compile this file type from a DNSBL/RBL text file using the [DNS Blacklist Editor](/kb/208) tool.  
 You can compile either from DNS Blacklist Editor's Tools menu, or from the command line (or as part of an automated script) by executing:`DNSBLEDIT.EXE <input-file> <output-file>`  
 Note: You should always keep a copy of your blacklist data in the standard text based format (RBLDNSD format) for editing. Compiling to the plug-in data file format is a one way process. A compiled data file cannot be opened for editing.
 
