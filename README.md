@@ -13,7 +13,7 @@ Fork this repository, clone locally, make your updates, commit, push, create a p
 ## Repository structure
 
 - Topic files (markdown) are stored in the `docs` folder.  
-The name of each topic file is: `<topic-ID>_<slug>.md` where
+The name of each topic file is: `<topic-ID>-<slug>.md` where
   - `<topic-ID>` - an integer value assigned sequentially.
   - `<slug>` - a string closely matching the topic's title but with URL friendly characters (replace spaces and special characters with hyphens, etc.). Used as part of the topic's URL.
 - A `_category.cfg` file (in the `docs` folder) lists category IDs and corresponding category names separated by a space (simple one line per item file). The listed order is not significant (sorted by category name later).
