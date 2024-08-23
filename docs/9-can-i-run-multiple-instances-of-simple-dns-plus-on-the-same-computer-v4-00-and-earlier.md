@@ -22,7 +22,7 @@ If you are going to use the HTTP API, you will also need to make sure that each 
 
 To do this:
 
-Install the first instance as normal. Typically this will install to "C:\Program Files\Simple DNS Plus".  
+Install the first instance as normal. Typically, this will install to "C:\Program Files\Simple DNS Plus".  
 Then copy this whole directory - for example to "C:\Program Files\Simple DNS Plus2".
 
 Now you can run the second instance from this directory.
