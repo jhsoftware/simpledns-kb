@@ -56,4 +56,4 @@ Simple DNS Plus configuration files for the second instance will be stored in a 
 `C:\ProgramData\JH Software\Simple DNS Plus\<instance ID>\`  
 
 > [!Note] The user interface, including the tray icon, can only be accessed for one instance at a time. We recommend you disable the tray icon option (Options dialog / General section) for both instances.  
-> To make it easier to access the GUI, you can make a desktop shortcut to "sdnsplus.exe" for each instance.
+> To make it easier to access the GUI, you can make a desktop shortcut to "sdnsgui.exe" for each instance ("sdnsplus.exe" for earlier versions).
