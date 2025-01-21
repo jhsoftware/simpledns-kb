@@ -11,50 +11,37 @@ modified-utc: 2021-09-08
 <table class="data">
 		<tr>
 			<td style="white-space: nowrap;vertical-align:top">Operating system:</td>
-			<td>
-Any edition of:
-
-- Windows 7 (SP1+)
-- Windows 8 (except "RT")
-- Windows 8.1 (except "RT")
-- Windows 10
-- Windows 11
-- Windows Server 2008 R2 (SP1+)
-- Windows Server 2012
-- Windows Server 2012 R2
-- Windows Server 2016
-- Windows Server 2019
-- Windows Server 2022
-
+			<td style="white-space:wrap">
+Windows 7 (SP1+) / Windows Server 2008 R2 (SP1+) or later.
 <p>Both 32 bit and 64 bit Windows versions are fully supported.<br/>
 "Windows Server Core" is also supported - <a href="/kb/119/simple-dns-plus-on-windows-server-core">details</a>.<br/>
 "Windows Embedded 7" is also supported - <a href="/kb/118/simple-dns-plus-on-windows-embedded-standard-7">details</a>.</p>
 			</td>
 		</tr>
 		<tr>
-			<td style="white-space: nowrap;vertical-align:top">Software:</td>
-			<td>Microsoft .NET Framework 4.8<br />
+			<td style="vertical-align:top">Software:</td>
+			<td style="white-space:wrap">Microsoft .NET Framework 4.8<br />
 			(automatically downloaded and installed if missing)</td>
 		</tr>
 		<tr>
-			<td style="white-space: nowrap;vertical-align:top">Processor (CPU):</td>
-			<td>1 GHz or better.</td>
+			<td style="vertical-align:top">Processor (CPU):</td>
+			<td style="white-space:wrap">1 GHz or better.</td>
 		</tr>
 		<tr>
-			<td style="white-space: nowrap;vertical-align:top">Memory (RAM):</td>
-			<td>64 MB + Windows and .NET Framework requirements.</td>
+			<td style="vertical-align:top">Memory (RAM):</td>
+			<td style="white-space:wrap">64 MB + Windows and .NET Framework requirements.</td>
 		</tr>
 		<tr>
-			<td style="white-space: nowrap;vertical-align:top">Hard disk space:</td>
-			<td>10 MB + Windows and .NET Framework requirements.</td>
+			<td style="vertical-align:top">Hard disk space:</td>
+			<td style="white-space:wrap">10 MB + Windows and .NET Framework requirements.</td>
 		</tr>
 		<tr>
-			<td style="white-space: nowrap;vertical-align:top">Network:</td>
-			<td>Any type of TCP/IP (IPv4 or IPv6) connection.</td>
+			<td style="vertical-align:top">Network:</td>
+			<td style="white-space:wrap">Any type of TCP/IP (IPv4 or IPv6) connection.</td>
 		</tr>
 		<tr>
-			<td style="white-space: nowrap;vertical-align:top">Internet IP address:</td>
-			<td>You need a static (*) Internet IP address only if you want to use Simple DNS Plus for hosting domain names on the Internet. A dynamic IP address can be used for a resolving and caching Internet domain names.</td>
+			<td style="vertical-align:top">Internet IP address:</td>
+			<td style="white-space:wrap">You need a static (*) Internet IP address only if you want to use Simple DNS Plus for hosting domain names on the Internet. A dynamic IP address can be used for a resolving and caching Internet domain names.</td>
 		</tr>
 </table>
 
